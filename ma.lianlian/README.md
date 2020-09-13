@@ -1,5 +1,5 @@
 # Lianlian Ma
 
-## Important Link
+## Important Links
 
-- https://lianlianm.com/aau/wnm608/ma.lianlian
+- http://lianlianm.com/aau/wnm608/ma.lianlian
