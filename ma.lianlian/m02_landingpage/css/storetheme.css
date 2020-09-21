@@ -1,0 +1,18 @@
+:root {
+	--color-neutral-light:#eee;
+	--color-neutral-medium:#999;
+	--color-neutral-dark:#444;
+
+
+body {
+	font-family:Calibri, sans-serif;
+	background-color: 
+}
+
+.view-window>h2 {
+	position: absolute;
+	top: 50%;     
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+}
