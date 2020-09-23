@@ -1,5 +1,4 @@
-/*CSS RESET*/
-
+/* CSS RESET*/
 
 *, *::before, *::after {
 	box-sizing:border-box;
@@ -11,15 +10,12 @@
 	--color-neutral-medium:#999;
 	--color-neutral-dark:#444;
 
-	--color-white:#999;
-	--color-black:#444;
+	--color-white:#fff;
+	--color-black:#000;
 
-	--header-height:3rem;
+	--header-height:3rem; 
 
-
-
-
-}
+}*/
 
 body {
 	margin:0;
@@ -46,14 +42,16 @@ a:hover {
 }
 
 
+
+
+
 /*Layout Classes*/
-.comtainer {
+.container {
 	max-width: 1000px;
 	margin-right: auto;
 	margin-left:auto;
 }
-.hidden {display: flex;}
-
+.hidden {display: none;}
 
 
 .display-flex { display: flex; }
@@ -62,16 +60,21 @@ a:hover {
 .display-inline-block { display: inline-block; }
 
 .flex-stretch { flex:1 1 auto; }
+.flex-none { flex:none; }
 
 
-/*Component Classes*/
+.flex-align-center { align-items:center; }
+.flex-justify-center {justify-content: center; } 
+
+
+
+/* Component Classes */
 .nav ul {
 	list-style: none;
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-left: 0;
 }
-
 
 
 .navbar {
@@ -96,16 +99,20 @@ line-height:var(--header-height);
 	background-size:cover;
 	background-position:center;
 	background-attachment:fixed;
-
 	height:70vh;
 }
+
 
 
 
 .card {
 	background-color: var(--color-white);
 	padding:1em;
-	margin-top: 1em;
+	margin-top:1em;
+	margin-bottom: 1em;
+
+	position:relative;
+	overflow:hidden;
 
 }
 
