@@ -55,11 +55,25 @@ h6 {
 color:#ff6700;
 }
 
+
+.btn {
+	width:10em;
+	height:3em;
+	border-radius: 0.2em;
+	border:none;
+	background-color: #ff6700;
+}
+.btn>a {
+	font-size:1.5em;
+	color:white;
+}
+
 hr {
 	margin-top:5em;
     border: 0.1px solid #bbbcbd;
     width: 90%;
 }
+
 footer {
 	text-align:center;
 	margin-bottom: 3em;
