@@ -15,7 +15,7 @@
 
 	--header-height:3rem; 
 
-}*/
+}
 
 body {
 	margin:0;
@@ -92,7 +92,6 @@ line-height:var(--header-height);
 }
 
 
-
 .view-window {
 	position:relative;
 	overflow:hidden;
@@ -113,18 +112,17 @@ line-height:var(--header-height);
 
 	position:relative;
 	overflow:hidden;
-
 }
 
 .card.soft {
 	border-radius: 0.5em;
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
 .card.hard {
 	border-radius: 0.2em;
 	border:2px solid var(--color-neutral-medium);
 }
-
 
 .card.dark {
 	background-color:var(--color-neutral-dark);
