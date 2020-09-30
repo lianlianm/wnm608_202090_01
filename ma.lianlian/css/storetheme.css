@@ -84,5 +84,6 @@ footer {
 
 
 /*module 03*/
-
-[class=0]
+[class*='col-']>.well {
+	height:100%;
+}

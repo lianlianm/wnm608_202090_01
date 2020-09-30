@@ -82,14 +82,14 @@ background-color: var(--color-neutral-dark);
 color:var(--color-neutral-light);
 line-height:var(--header-height);
 }
-.navbar h1 {
-	font-size:1em;
-	font-family:Helvetica, Arial, sans-serif;
-	margin:0;
-}
-.navbar a {
-	padding:0 0.5em;
-}
+    .navbar h1 {
+    	font-size:1em;
+    	font-family:Helvetica, Arial, sans-serif;
+    	margin:0;
+    }
+    .navbar a {
+    	padding:0 0.5em;
+    }
 
 
 .view-window {
@@ -114,29 +114,36 @@ line-height:var(--header-height);
 	overflow:hidden;
 }
 
-.card.soft {
-	border-radius: 0.5em;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    .card.soft {
+    	border-radius: 0.5em;
+    	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .card.hard {
+    	border-radius: 0.2em;
+    	border:2px solid var(--color-neutral-medium);
+    }
+    
+    .card.dark {
+    	background-color:var(--color-neutral-dark);
+    	color: var(--color-white);
+    }
+    .card.medium {
+    	background-color: var(--color-neutral-medium);
+    }
+    .card.flat {
+    	padding: 0;
+    }
 
-.card.hard {
-	border-radius: 0.2em;
-	border:2px solid var(--color-neutral-medium);
-}
 
-.card.dark {
-	background-color:var(--color-neutral-dark);
-	color: var(--color-white);
+.well {
+	padding: 0.5em;
+	background-color: var(--color-neutral-light);
+	margin:1px;
 }
-.card.medium {
-	background-color: var(--color-neutral-medium);
+.well .well {
+	background-color: var(--color-white);
 }
-.card.flat {
-	padding: 0;
-}
-
-
-
 
 
 
