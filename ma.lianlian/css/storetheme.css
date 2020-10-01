@@ -1,8 +1,20 @@
-/*:root {
+root {
 	--color-neutral-light:#f0ecec;
 	--color-neutral-medium:#9e8d8d;
 	--color-neutral-dark:#392f2f;
-}*/
+
+	--color-main-light:#bcebff;
+	--color-main-medium:#17a6e2;
+	--color-main-dark:#08435c;
+
+	--color-alt-light:#e5d7fa;
+	--color-alt-medium:#6515e2;
+	--color-alt-dark:#27055c;
+
+	--color-warning:#ea9310;
+	--color-error:#d90c63;
+	--color-purchase:#49ec80;
+}
 
 
 body {

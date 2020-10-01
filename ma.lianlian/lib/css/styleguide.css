@@ -42,7 +42,10 @@ a:hover {
 }
 
 
-
+code {
+	white-space: pre-wrap;
+	display:block;
+}
 
 
 /*Layout Classes*/
@@ -74,6 +77,33 @@ a:hover {
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-left: 0;
+}
+
+.nav a {
+	display:block;
+	padding:0.2em 0.5em;
+}
+.nav a:hover {
+	background-color: var(--color-main-medium);
+	color:var(--color-white-);
+}
+
+.nav.crumbs ul,
+.nav.pills ul,
+.nav.stretch ul,
+.nav.flex ul {
+	display:flex;
+}
+.nav.stretch li {
+	flex: 1 1 auto;
+	text-align:center;
+}
+.nav.pills a {
+	boder-radius:2em;
+	padding:0.5em 1em;
+}
+.nav.crumbs a {
+	display:inline-block;
 }
 
 
@@ -130,6 +160,9 @@ line-height:var(--header-height);
     }
     .card.medium {
     	background-color: var(--color-neutral-medium);
+    }
+    .card.rainbow {
+    	background-image: 
     }
     .card.flat {
     	padding: 0;
