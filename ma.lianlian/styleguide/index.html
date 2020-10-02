@@ -6,7 +6,7 @@
 	<title>Styleguide</title>
 
 	<base href="/aau/wnm608/ma.lianlian/">
-	<!-- base? -->
+	<!-- base是指ul路径的标签，有了base之后下面这些link的href就不用指定上一层文件夹的路径了， 但对于本地文件无效，只对网络存储器中的文件存储路径有效 -->
 
 	<link rel="stylesheet" href="lib/css/styleguide.css">
 	<link rel="stylesheet" href="lib/css/gridsystem.css">
@@ -16,32 +16,84 @@
 <body>
 	<header class="navbar">
 		<div class="container display-flex flex-align-center">
-			<div class="flex-none">
-				<h1>Styleguide</h1>
-			</div>
+			<div class="flex-none"><h1>Styleguide</h1></div>
+		</div>
 	</header>
 
-	<nav class="nav toc">
+	<nav class="toc">
 		<div class="card soft">
 			<h2>Table of Contents</h2>
 		    <ul>
 		    	<li><a href="styleguide/#typography">Typography</a></li>
 		    	<li><a href="styleguide/#grid">Grid</a></li>
+		    	    <ul>
+		    	        <li><a href="styleguide/#basic-grid">Basic Grid</a></li>
+		    	        <li><a href="styleguide/#complex-grid">Complex Grid</a></li>
+		    	        <li><a href="styleguide/#bresponsive-grid">Responsive Grid</a></li>
+		    	    </ul>
+		    	<li><a href="styleguide/#card">Card</a></li>
 		    	<ul>
-		    	    <li><a href="styleguide/#basic-grid">Basic Grid</a></li>
-		    	    <li><a href="styleguide/#complex-grid">Complex Grid</a></li>
-		    	    <li><a href="styleguide/#bresponsive-grid">Responsive Grid</a></li>
+		    		<li><a href="styleguide/#basic-card=">Basic Card</a></li>
+		    		<li><a href="styleguide/#soft-card=">Soft Card</a></li>
+		    		<li><a href="styleguide/#hard-card=">Hard Card</a></li>
+		    		<li><a href="styleguide/#medium-card=">Medium Card</a></li>
+		    		<li><a href="styleguide/#dark-card=">Dark Card</a></li>
+		    		<li><a href="styleguide/#rainbow-card=">Rainbow Card</a></li>
+		    	</ul>
+		    	<li><a href="styleguide/#viewwindow">Viewwindow</a></li>
+		    	<li><a href="styleguide/#navigation">Navigations</a></li>
+		    	<ul>
+		    		<li><a href="styleguide/#basic-nav=">Basic Nav</a></li>
+		    		<li><a href="styleguide/#flex-nav=">Flex Nav</a></li>
+		    		<li><a href="styleguide/#stretch-nav=">Stretch Nav</a></li>
+		    		<li><a href="styleguide/#pills-nav=">Pills Nav</a></li>
+		    		<li><a href="styleguide/#crumb-nav=">Crumbs Nav</a></li>
 		    	</ul>
 		    </ul>
 	    </div>
 	</nav>
 
 
-<div class="container" id="typography">
-	
-</div>
+
+
+    <div class="container" id="typography">
+    	<h2>Typography</h2>
+    	<div class="card soft">
+    		<h3>Headings</h3>
+    		<h4>Code</h4>
+    		<code class="well">&lt;h1>Heading 1&lt;/h1>
+&lt;h2>Heading 2&lt;/h2>
+&lt;h3>Heading 3&lt;/h3>
+&lt;h4>Heading 4&lt;/h4>
+&lt;h5>Heading 5&lt;/h5>
+&lt;h6>Heading 6&lt;/h6></code>
+<!-- 此处的&lt;h2>Heading 2&lt;/h2> 和</code>前面空格全部删除与否是会在页面中有影响的 -->
+
+            <h4>Example</h4>
+    		<div class="well">
+    			<!-- h$*6{Heading $} -->
+    			<h1>Heading 1</h1>
+    			<h2>Heading 2</h2>
+    			<h3>Heading 3</h3>
+    			<h4>Heading 4</h4>
+    			<h5>Heading 5</h5>
+    			<h6>Heading 6</h6>
+    		</div>
+
+
+    		<h3>Paragraphy</h3>
+    		<div class="well">
+    			<!-- p*3>lorem50 -->
+    			<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Deleniti necessitatibus     dolorem aspernatur quod alias commodi assumenda ex error recusandae explicabo     consequuntur magni qui aliquid, blanditiis esse illo, reiciendis mollitia doloribus     dignissimos eligendi, totam eum quos. Nesciunt, ut fugit quos repudiandae     voluptatibus neque enim laboriosam magni maxime magnam, quibusdam. Error, cum.</p>
+    			<p>Officia quod vero tempore amet omnis est labore, magnam reiciendis dicta, magni     porro quidem cumque veniam quibusdam molestias quia odit incidunt nisi harum     dignissimos sint ipsa eius, dolorem cum. Adipisci libero delectus, id doloremque,     provident aliquid ipsa recusandae enim corporis deserunt porro veniam officia     laboriosam assumenda. Tempore ea, quidem at!</p>
+    			<p>Doloremque in enim quidem natus corrupti repellendus earum, facere eius aperiam     doloribus veniam minus maiores aliquid modi beatae quas ullam. Sequi dignissimos     labore, perspiciatis quidem dolorem modi quas at facere praesentium iure,     consequatur. Quam laboriosam, nam nulla facere explicabo ipsam. Ab labore dicta     soluta quas veniam doloremque consectetur illum minus!</p>
+    		</div>
+    	</div>
+    </div>
+
 
 	<div class="container" id ="grid">
+		<h2>Grid</h2>
 		<div class="card soft">
 			<h2 id="basic-grid">Basic Grid</h2>
 			<div class="grid">
@@ -147,10 +199,11 @@
 					<div class="well">Col 3</div>
 				</div>
 			</div>
+
+
+
+
 			<hr>
-
-
-
 			<div class="grid gap large">
 				<div class="col-xs-8 col-md-4 col-xl-12">
 					<div class="well">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Error velit praesentium quos quidem in? Vel maiores ipsum nulla dicta aperiam vero laborum, debitis. Sit, aliquid? Unde, odio harum! Quo dolore adipisci esse doloremque dolor facilis! Temporibus optio eaque enim, magni minima officiis, amet voluptates veniam aspernatur delectus nihil cumque repudiandae?</div>
@@ -166,41 +219,133 @@
 		</div>
 	</div>
 
+
+
+	<div class="container" id="grid">
+		<div class="card soft">
+			<div>
+				<h2>Layout</h2>
+			</div>
+		</div>
+
+		<div>
+			<h3>Title</h3>
+		</div>
+		<div class="grid gap">
+			<!-- .col-xs-12.col-md-4*3>.card.soft>h3{Item $}p>lorem50 --> 
+			<!-- 注意，下一层级才会用>,如果是同层并列关系的就什么都不加，比如上面的h3与p -->
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">
+					<h3>Item 1</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">
+					<h3>Item 2</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">
+					<h3>Item 3</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		 	
+		
+
 	<div class="container">
 		<h2>Card</h2>
-		<h3>Basic Card</h3>
-		<div class="card basic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-		<h3>Soft Card</h3>
-		<div class="card soft">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-		<h3>Hard Card</h3>
-		<div class="card hard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-		<h3>Medium Card</h3>
-		<div class="card medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-		<h3>Dark Card</h3>
-		<div class="card dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-		<h3>Rainbow Card</h3>
-		<div class="card rainbow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+
+		<class class="soft">
+
+		<div class="well">
+			<h3>Basic Card</h3>
+
+		    <div class="card basic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+    
+		    <h3>Soft Card</h3> 
+    
+		    <div class="card soft">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+    
+		    <h3>Hard Card</h3>
+    
+		    <div class="card hard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+    
+		    <h3>Medium Card</h3>
+    
+		    <div class="card medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+    
+		    <h3>Dark Card</h3>
+    
+		    <div class="card dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+    
+		    <h3>Rainbow Card</h3>
+    
+		    <div class="card rainbow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
+		</div>
+    </div>
 
 
-	</div>
 	<div class="container">
 		<h2>View Window</h2>
-		<div class="view-window" style="background-image:urk(img/xiaomi001.jpg"></div>
+
+		<div class="view-window" style="background-image:url(img/ocean001.jpg)"></div>
 	</div>
+
+
 
 	<div class="container" id="navigations">
 		<h2>Navigations</h2>
+
 		<script>
-			const makeNav = (classes='')=> {
-				const links = ['home','store','about','cart'];
-				document.write(
-					<div>
-					<nav>
-					
-					)
-			}
+		const makeNav = (classes='') => {
+			const links = ['home','store','about','cart'];
+			document.write(`
+			<div>
+			<nav class="${classes}">
+			    <ul>
+			        ${links.reduce((r,o,i)=>r+`<li><a href="#">${o}</a></li>`,'')}
+			    </ul>
+			</nav>
+			</div>
+			`)
+		}
 		</script>
-		<h3>Basic Nav</h3>
+
+
+		<div class="card soft">
+			<h3>Basic Nav</h3>
+			<!-- nav.nav>ul>li*4>a[href=#]{Link $} -->
+			<!-- <nav class="nav">
+				<ul> 
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+					<li><a href="#">Link 4</a></li>
+				</ul>
+			</nav> -->
+			<div class="grid">
+				<div class="col-xs-4"><script>makeNav('nav')</script></div>
+				<div class="col-xs-8"></div>
+			</div>
+		</div>
+
+		<div class="card soft">
+			<h3>Flex Nav</h3>
+			<script>makeNav('nav flex')</script>
+		</div>
+
+		<div class="card soft">
+			<h3>Stretch Nav</h3>
+			<script>makeNav('nav stretch')</script>
+		</div>
+
+
+
 	</div>
 
 

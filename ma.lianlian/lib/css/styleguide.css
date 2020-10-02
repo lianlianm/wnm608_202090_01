@@ -41,6 +41,12 @@ a:hover {
 	text-decoration: underline;
 }
 
+/* 实现了文字首字母左边缩进2em */
+p::first-letter {
+	margin-left:2em;
+}
+
+
 
 code {
 	white-space: pre-wrap;
@@ -79,32 +85,32 @@ code {
 	padding-left: 0;
 }
 
-.nav a {
-	display:block;
-	padding:0.2em 0.5em;
-}
-.nav a:hover {
-	background-color: var(--color-main-medium);
-	color:var(--color-white-);
-}
+    .nav a {
+    	display:block;
+    	padding:0.2em 0.5em;
+    }
+    .nav a:hover {
+    	background-color: var(--color-main-medium);
+    	color:var(--color-white-);
+    	text-decoration: none;
+    }
 
-.nav.crumbs ul,
-.nav.pills ul,
-.nav.stretch ul,
-.nav.flex ul {
-	display:flex;
-}
-.nav.stretch li {
-	flex: 1 1 auto;
-	text-align:center;
-}
-.nav.pills a {
-	boder-radius:2em;
-	padding:0.5em 1em;
-}
-.nav.crumbs a {
-	display:inline-block;
-}
+    .nav.stretch ul,
+    .nav.flex ul {
+    	display:flex;
+    }
+    
+    .nav.stretch li {
+    	flex: 1 1 auto;
+    	text-align:center;
+    }
+    .nav.pills a {
+    	border-radius:2em;
+    	padding:0.5em 1em;
+    }
+    .nav.crumbs a {
+    	display:inline-block;
+    }
 
 
 .navbar {
@@ -162,7 +168,7 @@ line-height:var(--header-height);
     	background-color: var(--color-neutral-medium);
     }
     .card.rainbow {
-    	background-image: 
+    	background-image:linear-gradient(45deg,#f16b9c,#d5f35e,#e6a1de); 
     }
     .card.flat {
     	padding: 0;
