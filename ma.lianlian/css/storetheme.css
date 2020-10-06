@@ -4,7 +4,7 @@ root {
 	--color-neutral-dark:#392f2f;
 
 	--color-main-light:#bcebff;
-	--color-main-medium:#17a6e2;
+	--color-main-medium:#07aff5;
 	--color-main-dark:#08435c;
 
 	--color-alt-light:#e5d7fa;
@@ -15,6 +15,7 @@ root {
 	--color-error:#d90c63;
 	--color-purchase:#49ec80;
 }
+
 
 
 body {
@@ -99,4 +100,10 @@ footer {
 /*module 03*/
 [class*='col-']>.well {
 	height:100%;
+}
+
+@media (max-width:600px) {
+	h2 {
+		font-size:1em;
+	}
 }

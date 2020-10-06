@@ -40,15 +40,15 @@
 		    		<li><a href="styleguide/#dark-card=">Dark Card</a></li>
 		    		<li><a href="styleguide/#rainbow-card=">Rainbow Card</a></li>
 		    	</ul>
-		    	<li><a href="styleguide/#viewwindow">Viewwindow</a></li>
+		    	<li><a href="styleguide/#viewwindow">View Window</a></li>
 		    	<li><a href="styleguide/#navigation">Navigations</a></li>
-		    	<ul>
+		    	<!-- <ul>
 		    		<li><a href="styleguide/#basic-nav=">Basic Nav</a></li>
 		    		<li><a href="styleguide/#flex-nav=">Flex Nav</a></li>
 		    		<li><a href="styleguide/#stretch-nav=">Stretch Nav</a></li>
 		    		<li><a href="styleguide/#pills-nav=">Pills Nav</a></li>
-		    		<li><a href="styleguide/#crumb-nav=">Crumbs Nav</a></li>
-		    	</ul>
+		    		<li><a href="styleguide/#crumbs-nav=">Crumbs Nav</a></li>
+		    	</ul> -->
 		    </ul>
 	    </div>
 	</nav>
@@ -302,7 +302,7 @@
 		<h2>Navigations</h2>
 
 		<script>
-		const makeNav = (classes='') => {
+		const makeNav = (classes='') =>  {
 			const links = ['home','store','about','cart'];
 			document.write(`
 			<div>
@@ -344,8 +344,15 @@
 			<script>makeNav('nav stretch')</script>
 		</div>
 
+		<div class="card soft">
+			<h3>Pills Nav</h3>
+			<script>makeNav('nav pills')</script>
+		</div>
 
-
+		<div class="card soft">
+			<h3>Breadcrumb Nav</h3>
+			<script>makeNav('nav crumbs')</script>
+		</div>
 	</div>
 
 

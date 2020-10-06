@@ -10,6 +10,10 @@
 	--color-neutral-medium:#999;
 	--color-neutral-dark:#444;
 
+    --color-main-light:#bcebff;
+    --color-main-medium:#07aff5;
+    --color-main-dark:#08435c;
+
 	--color-white:#fff;
 	--color-black:#000;
 
@@ -91,10 +95,12 @@ code {
     }
     .nav a:hover {
     	background-color: var(--color-main-medium);
-    	color:var(--color-white-);
+    	color: var(--color-white);
     	text-decoration: none;
     }
 
+    .nav.crumbs ul,
+    .nav.pills ul,
     .nav.stretch ul,
     .nav.flex ul {
     	display:flex;
@@ -111,21 +117,29 @@ code {
     .nav.crumbs a {
     	display:inline-block;
     }
+    .nav.crumbs a:hover {
+       background-color:transparent;
+       color:inherit;
+       text-decoration: underline;
+   } 
+    .nav.crumbs li:not(;first-child)::before {
+        content:'/';
+    }
 
 
 .navbar {
-background-color: var(--color-neutral-dark);
-color:var(--color-neutral-light);
-line-height:var(--header-height);
+    background-color: var(--color-neutral-dark);
+    color:var(--color-neutral-light);
+    line-height:var(--header-height);
 }
-    .navbar h1 {
-    	font-size:1em;
-    	font-family:Helvetica, Arial, sans-serif;
-    	margin:0;
-    }
-    .navbar a {
-    	padding:0 0.5em;
-    }
+.navbar h1 {
+	font-size:1em;
+	font-family:Helvetica, Arial, sans-serif;
+	margin:0;
+}
+.navbar a {
+	padding:0 0.5em;
+}
 
 
 .view-window {
@@ -136,7 +150,7 @@ line-height:var(--header-height);
 	background-attachment:fixed;
 	height:70vh;
 }
-
+/*70vh就是70%view height */
 
 
 

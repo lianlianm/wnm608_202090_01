@@ -45,6 +45,8 @@
 
 /* 以下设置是为了实现responsive design的layout设置 */
 
+/* @media 是表明存在的rule，而.col-才是css rule, 所以这里只是表示这些col规则是存在于某一尺寸范围内的@media中，
+而不需要在HTML中出现@media，html中只要出现col就行*/
 
 /*Extra Small*/
 @media(min-width:0) {
