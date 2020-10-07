@@ -295,7 +295,7 @@
 
 		<script>
 		const makeNav = (classes='') =>  {
-			const links = ['Home','Product','Gallary','Account'];
+			const links = ['Home','Product','Gallery','Account'];
 			document.write(`
 			<div>
 			<nav class="${classes}">
@@ -323,6 +323,147 @@
 		<div class="card soft">
 			<h3>Breadcrumb Nav</h3>
 			<script>makeNav('nav crumbs')</script>
+		</div>
+	</div>
+
+
+	<div class="container" id="tables">
+		<h2>Tables</h2>
+
+		<div class="card soft">
+			<h3>Basic Tables</h3>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>cell</th>
+						<th>cell</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>cell</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+
+		<div class="card soft">
+			<h3>Striped Tables</h3>
+			<script>makeTable('table lined border vertical horizontal')</script>
+		</div>
+
+	</div>
+
+
+	<div class="container">
+		<h2>Forms</h2>
+
+		<div class="car soft">
+			<h3>Basic Input</h3>
+
+			<form action="">
+				<input type="text" placeholder="Text" class="form-input">
+				<input type="number" placeholder="Numer" class="form-input">
+				<input type="search" placeholder="Search" class="form-input">
+				<input type="password" placeholder="Password" class="">
+			</form>
+
+			<h3>Form Label &amp; Control</h3>
+			<form>
+				<div class="form-control">
+					<label for="example-1" class="form-label">Example</label>
+					<input id="example-1" type="text" placeholder="Text" class="form-input">
+				</div>
+				<div class="form-control">
+					<label for="example-2" class="form-label">Example</label>
+					<input id="example-2" type="text" placeholder="Text" class="form-input">
+				</div>
+				<div class="form-control">
+					<label for="example-3" class="form-label">Example</label>
+					<input id="example-3" type="text" placeholder="Text" class="form-input">
+				</div>
+				<div class="flex-stretch">
+						<label for="example-search" class="form-label">Search</label>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3>Buttons</h3>
+
+
+		<h3>Hotdog</h3>
+		<div class="hotdog">Hotdog</div>
+
+		<form>
+			<input type="search" class="hotdog dark">
+		</form>
+		<form>
+			<img src="img/icons/email.svg" alt="" class="icon">
+			<input type="text" id="example-email">
+		</form>
+		<form>
+			<input type="text" id="example-password">
+			<img src="img/icons/password.svg" alt="" class="icon">
+		</form>
+
+
+		<h3>Select</h3>
+		<div class="form-select">
+			<select>
+				<option>Option1</option>
+				<option>Option2</option>
+				<option>Option3</option>
+			</select>
+		</div>
+
+
+		<h3>Checkbox</h3>
+		<div class="form-control">
+			<label>Text
+				<input type="checkbox">
+			</label>
+		</div>
+		<div class="form-control">
+			<input type="text">
+			<label for="check-example">Text</label>
+			
+		</div>
+			<label for="check-example">Text</label>
+			<input type="text">
+		</div>
+
+
+
+
+	</div>
+
+
+	<div class="container">
+		<h3>Product Figure</h3> 
+
+		<div class="well">
+			<h3>Figure</h3>
+			<figure>
+				<img src="" alt="">
+				<figcaption>This is an image</figcaption>
+			</figure>
+
+
+		<h3>Product Figure</h3>
+		<figure class="product-item">
+			<div class="product-image">
+				<img src="" alt="">
+			</div>
+			<figcaption class="product-description">
+				<div class="product-price"></div>
+				
+			</figcaption>
+		</figure>
 		</div>
 	</div>
 

@@ -200,25 +200,137 @@ code {
 
 
 
+/* Tables */
+
+.table {
+    width:100%;
+    border-collapse: collapse;
+}
+.table td,
+.table th {
+    text-align:left;
+    padding:0.2em 0.5em;
+}
+
+.table.striped tbody tr:nth-chilf(odd) {
+    background-color: var(--color-neutral-light);
+}
+
+.table.lined.horizontal tbody tr{
+    border-color: var(--color-neutral-medium);
+}
+
+.table.lined.vertical tbody tr:nth-chilf(odd) {
+    background-color: var(--color-neutral-light);
+}
+
+
+/* Forms */
+.form-input {
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    background-color:  transparent;
+    font: inherit;
+    padding: 0.5em 1em;
+
+
+}
+
+
+.form-control {
+    margin: 1em 0;
+}
+.form-label {
+    font-size: 0.8em;
+    color: var(--color-neutral-medium);
+}
+
+
+/* Buttons */
+
+.btn,
+.form-button {
+    diaplay: ;
+    text-align: center;
+}
+
+.hotdog {
+    display:inline-block;
+    width:100%;
+    font:inherit;
+    background-color: var(--color-neutral-light);
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
+    border-width: 0;
+    outline: 0;
+}
+
+.hotdog.dark {
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-light);
+}
+
+.hotdog input {
+    background-color: transparent;
+    border-width: 0;
+    flex: ;
 
 
 
+}
+
+.icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: text-bottom;
+}
+
+.form-select>select {
+    padding:0.5em 1em;
+    background-color:  var(--color-neutral-light);
+    border-width: 0;
+    border-radius: 0.3em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    font-
+}
+
+.form-select {
+    position:relative;
+}
+.form-select::after {
+    position:absolute;
+    content:'';
+    font-family: Arial,sans-serif;
+    font-size:0.9em;
+    top:50%;
+    transform: translateY(-50%);
+    right: 0.3rem;
+    pointer-events: none;
+    color: var(--color-neutral-medium);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.toggle label {
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    background-color: var(--color-neutral-light);
+    border-radius: 1em;
+    position: relative;
+    font-size: 1.3em;
+}
+.toggle label::after {
+    content: '';
+    position: absolute;
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    border-radius: 1em;
+    background-color: var(--color-white);
+    transition: all 0.3s;
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+.toggle input:checked + label
