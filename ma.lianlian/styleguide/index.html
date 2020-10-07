@@ -70,6 +70,7 @@
 <!-- 此处的&lt;h2>Heading 2&lt;/h2> 和</code>前面空格全部删除与否是会在页面中有影响的 -->
 
             <h4>Example</h4>
+
     		<div class="well">
     			<!-- h$*6{Heading $} -->
     			<h1>Heading 1</h1>
@@ -221,7 +222,7 @@
 
 
 
-	<div class="container" id="grid">
+	<div class="container">
 		<div class="card soft">
 			<div>
 				<h2>Layout</h2>
@@ -229,71 +230,62 @@
 		</div>
 
 		<div>
-			<h3>Title</h3>
+			<h3>Popular Sets</h3>
 		</div>
-		<div class="grid gap">
-			<!-- .col-xs-12.col-md-4*3>.card.soft>h3{Item $}p>lorem50 --> 
-			<!-- 注意，下一层级才会用>,如果是同层并列关系的就什么都不加，比如上面的h3与p -->
-			<div class="col-xs-12 col-md-4">
-				<div class="card soft">
-					<h3>Item 1</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+		<div class="card flat display-flex">
+            <div class="grid gap">
+                <div class="col-xs-12 col-md-8">
+                    <div class="flex-stretch flex-align-center flex-justify-center">
+                        <img src="img/gray000.png" alt="" style="height:300px"> 
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <article class="article flex-stretch flex-align-center flex-justify-center">
+                        <div class="article-body">
+                            <h3>HUI</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
+                            <nav class="nav pills price" style="width:40%"><a href="#">Shop Now</a></nav>
+                        </div>
+                    </article>
+                </div>
+            </div>   
+        </div>
+	</div>
+
+	<div class="container">
+		<h2>Product List</h2>
+		<div class="card soft">
+			<div class="grid gap display-flex">
+				<div class="card flat flex-align-center col-xs-12 col-md-4">
+					<img src="img/gray001.jpg" alt="" style="height:300px">
+					<h3>Gray Light</h3>
+					<p>$ 50.00</p>
+					<nav class="nav pills price" style="width:40%"><a href="#">Shop Now</a></nav>
 				</div>
-			</div>
-			<div class="col-xs-12 col-md-4">
-				<div class="card soft">
-					<h3>Item 2</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<div class="card flat flex-align-center col-xs-12 col-md-4">
+					<img src="img/gray001.jpg" alt="" style="height:300px">
+					<h3>Gray Light</h3>
+					<p>$ 50.00</p>
+					<nav class="nav pills price" style="width:40%"><a href="#">Shop Now</a></nav>
 				</div>
-			</div>
-			<div class="col-xs-12 col-md-4">
-				<div class="card soft">
-					<h3>Item 3</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<div class="card flat flex-align-center col-xs-12 col-md-4">
+					<img src="img/gray001.jpg" alt="" style="height:300px">
+					<h3>Gray Light</h3>
+					<p>$ 50.00</p>
+					<nav class="nav pills price" style="width:40%"><a href="#">Shop Now</a></nav>
 				</div>
 			</div>
 		</div>
 	</div>
+
 		 	
-		
-
-	<div class="container">
-		<h2>Card</h2>
-
-		<class class="soft">
-
-		<div class="well">
-			<h3>Basic Card</h3>
-
-		    <div class="card basic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-    
-		    <h3>Soft Card</h3> 
-    
-		    <div class="card soft">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-    
-		    <h3>Hard Card</h3>
-    
-		    <div class="card hard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-    
-		    <h3>Medium Card</h3>
-    
-		    <div class="card medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-    
-		    <h3>Dark Card</h3>
-    
-		    <div class="card dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-    
-		    <h3>Rainbow Card</h3>
-    
-		    <div class="card rainbow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at recusandae similique, atque quia, sequi esse nulla corporis temporibus sed est, eum voluptates soluta quibusdam officia eos ullam nam? Voluptatem harum, sed nostrum ut molestias pariatur odio at laborum, porro quo, explicabo cumque deserunt, expedita cum voluptas recusandae dolorem amet.</div>
-		</div>
-    </div>
 
 
 	<div class="container">
 		<h2>View Window</h2>
 
-		<div class="view-window" style="background-image:url(img/ocean001.jpg)"></div>
+		<div class="view-window" style="background-image:url(img/background001.jpg)"></div>
 	</div>
 
 
@@ -303,7 +295,7 @@
 
 		<script>
 		const makeNav = (classes='') =>  {
-			const links = ['home','store','about','cart'];
+			const links = ['Home','Product','Gallary','Account'];
 			document.write(`
 			<div>
 			<nav class="${classes}">
@@ -318,31 +310,10 @@
 
 
 		<div class="card soft">
-			<h3>Basic Nav</h3>
-			<!-- nav.nav>ul>li*4>a[href=#]{Link $} -->
-			<!-- <nav class="nav">
-				<ul> 
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-				</ul>
-			</nav> -->
-			<div class="grid">
-				<div class="col-xs-4"><script>makeNav('nav')</script></div>
-				<div class="col-xs-8"></div>
-			</div>
-		</div>
-
-		<div class="card soft">
 			<h3>Flex Nav</h3>
 			<script>makeNav('nav flex')</script>
 		</div>
 
-		<div class="card soft">
-			<h3>Stretch Nav</h3>
-			<script>makeNav('nav stretch')</script>
-		</div>
 
 		<div class="card soft">
 			<h3>Pills Nav</h3>

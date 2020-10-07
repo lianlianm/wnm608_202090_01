@@ -72,8 +72,9 @@ code {
 .flex-none { flex:none; }
 
 
-.flex-align-center { align-items:center; }
+.flex-align-center { align-items: center; }
 .flex-justify-center {justify-content: center; } 
+.flex-justify-space-around {justify-content: space-around; } 
 
 
 
@@ -148,7 +149,6 @@ code {
 	height:70vh;
 }
 /*70vh就是70%view height */
-
 
 
 .card {
