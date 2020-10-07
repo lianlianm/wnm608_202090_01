@@ -10,15 +10,10 @@
 	--color-neutral-medium:#999;
 	--color-neutral-dark:#444;
 
-    --color-main-light:#bcebff;
-    --color-main-medium:#07aff5;
-    --color-main-dark:#08435c;
-
 	--color-white:#fff;
 	--color-black:#000;
 
 	--header-height:3rem; 
-
 }
 
 body {
@@ -41,6 +36,7 @@ a {
 	font-weight: bold;
 	color:inherit;
 }
+
 a:hover {
 	text-decoration: underline;
 }
@@ -122,8 +118,9 @@ code {
        color:inherit;
        text-decoration: underline;
    } 
-    .nav.crumbs li:not(;first-child)::before {
-        content:'/';
+    .nav.crumbs li:not(:first-child)::before {
+        content:'→';
+        font-family: arial;
     }
 
 
