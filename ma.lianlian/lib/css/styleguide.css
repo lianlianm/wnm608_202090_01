@@ -265,21 +265,49 @@ code {
 
 /* Buttons */
 
+/*所有card的样式设计方法，都可以用在button上，去设计属于自己不同的button*/
+/*也可以早button上面添加label，以便于解释这个button的用途*/
+
 .btn,
 .form-button {
-    diaplay: ;
-    text-align: center;
+    display: inline-block;
+    width: 100%;
+    border-width:0;
+    font: inherit;
+    border-radius: 0.3em;
+    padding:0.5em 1em;
+    background-color: var(--color-neutral-light);
+    text-align:center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
 }
 
+.btn:hover,
+.form-button:hover {
+    text-decoration: none;
+}
+    .btn.inline {
+        width: initial;
+    }
+
+    .btn.sell {
+        background-color: var(--color-purchase);
+
+    }
+
+
 .hotdog {
-    display:inline-block;
+    /*display:inline-block;*/
+    display:inline-flex;
     width:100%;
-    font:inherit;
+    font: inherit;
     background-color: var(--color-neutral-light);
     padding: 0.5em 1.5em;
     border-radius: 2em;
     border-width: 0;
     outline: 0;
+    /*margin: 1em 0; 添加hotdog之间的距离*/
 }
 
 .hotdog.dark {
@@ -290,11 +318,13 @@ code {
 .hotdog input {
     background-color: transparent;
     border-width: 0;
-    flex: ;
-
-
-
+    flex: 1 1 100%;
+    outline: 0;
+    font: inherit;
+  /*padding:0 1em;*/
 }
+/*flex: 1 1 100%;实际上显示效果是stretch*/
+
 
 .icon {
     display: inline-block;
