@@ -1,4 +1,4 @@
-/* CSS RESET*/
+/*  CSS RESET  */
 
 *, *::before, *::after {
 	box-sizing:border-box;
@@ -54,7 +54,7 @@ code {
 }
 
 
-/*Layout Classes*/
+/*   Layout Classes   */
 .container {
 	max-width: 1000px;
 	margin-right: auto;
@@ -156,7 +156,6 @@ code {
 	padding:1em;
 	margin-top:1em;
 	margin-bottom: 1em;
-
 	position:relative;
 	overflow:hidden;
 }
@@ -281,7 +280,9 @@ code {
     text-decoration: none;
     cursor: pointer;
     outline: 0;
+    -webkit-appearance: none;
 }
+ /*btn和form-button是一样的东西，换了个short name*/
 
 .btn:hover,
 .form-button:hover {
@@ -296,6 +297,9 @@ code {
 
     }
 
+
+
+/*  Hotdog  */
 
 .hotdog {
     /*display:inline-block;*/
@@ -321,10 +325,9 @@ code {
     flex: 1 1 100%;
     outline: 0;
     font: inherit;
-  /*padding:0 1em;*/
+  /*padding:0 1em; 可以添加hotdog之间的距离*/
 }
 /*flex: 1 1 100%;实际上显示效果是stretch*/
-
 
 .icon {
     display: inline-block;
@@ -333,6 +336,8 @@ code {
     vertical-align: text-bottom;
 }
 
+
+/*   Select   */
 .form-select>select {
     padding:0.5em 1em;
     background-color:  var(--color-neutral-light);
@@ -340,15 +345,21 @@ code {
     border-radius: 0.3em;
     cursor: pointer;
     -webkit-appearance: none;
-    font-
+    display: inline-block;
+    width:100%;
+    font:inherit;
+    outline:0;
 }
+ /*-webkit-appearance: none; 改变按钮和其他控件的外观，使其类似于原生控件，是为了使select在每个操作系统中都显示一样。此属性非标准且渲染效果在不同浏览器下不同，有些属性值甚至不支持，请慎用。*/
 
 .form-select {
     position:relative;
+    margin: 0.5em 0;
+    /*margin: 1em 0; 可以产生外围距离*/
 }
 .form-select::after {
     position:absolute;
-    content:'';
+    content:'▼';
     font-family: Arial,sans-serif;
     font-size:0.9em;
     top:50%;
@@ -358,12 +369,13 @@ code {
     color: var(--color-neutral-medium);
 }
 
-
+/*  Toggle   */
 .toggle label {
     display: inline-block;
     width: 2em;
     height: 1em;
     background-color: var(--color-neutral-light);
+    border:0.1em solid var(--color-neutral-medium);
     border-radius: 1em;
     position: relative;
     font-size: 1.3em;
@@ -379,4 +391,8 @@ code {
     transition: all 0.3s;
     box-shadow: 0 0 2px rgba(0,0,0,0.4);
 }
-.toggle input:checked + label
+.toggle input:checked + label::after {
+    transform: translate(1em);
+}
+
+
