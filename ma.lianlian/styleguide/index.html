@@ -8,6 +8,7 @@
     <base href="/aau/wnm608/ma.lianlian/">
     <!-- base是指ul路径的标签，有了base之后下面这些link的href就不用指定上一层文件夹的路径了， 但对于本地文件无效，只对网络存储器中的文件存储路径有效 -->
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lib/css/styleguide.css">
     <link rel="stylesheet" href="lib/css/gridsystem.css">
     <link rel="stylesheet" href="css/storetheme.css">
@@ -864,137 +865,77 @@
     <hr>
     <h1 class="container">My Store Style</h1>
    
-    <div class="container" id="typography">
+    <div class="container" id=" My typography">
         <h2>Typography</h2>
         <div class="card soft">
             <h3>Headings</h3>
-            <h4>Code</h4>
-            <code class="well">&lt;h1>Heading 1&lt;/h1>
-        &lt;h2>Heading 2&lt;/h2>
-        &lt;h3>Heading 3&lt;/h3>
-        &lt;h4>Heading 4&lt;/h4>
-        &lt;h5>Heading 5&lt;/h5>
-        &lt;h6>Heading 6&lt;/h6></code>
-        <!-- 此处的&lt;h2>Heading 2&lt;/h2> 和</code>前面空格全部删除与否是会在页面中有影响的 -->
-
-            <h4>Example</h4>
-
-            <div class="well">
-                <!-- h$*6{Heading $} -->
-                <h1>Heading 1</h1>
-                <h2>Heading 2</h2>
-                <h3>Heading 3</h3>
-                <h4>Heading 4</h4>
-                <h5>Heading 5</h5>
-                <h6>Heading 6</h6>
+            <div class="well grid">
+                <div class="col-xs-12 col-md-6 heading-bold">
+                    <h1 class="heading-bold">Montserrat Bold</h1>
+                    <h1 class="heading-bold">Heading 1</h1>
+                    <h2 class="heading-bold">Heading 2</h2>
+                    <h3 class="heading-bold">Heading 3</h3>
+                    <h4 class="heading-bold">Heading 4</h4>
+                    <h5 class="heading-bold">Heading 5</h5>
+                    <h6 class="heading-bold">Heading 6</h6>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h1 class="heading-medium">Montserrat Medium</h1>
+                    <h1 class="heading-medium">Heading 1</h1>
+                    <h2 class="heading-medium">Heading 2</h2>
+                    <h3 class="heading-medium">Heading 3</h3>
+                    <h4 class="heading-medium">Heading 4</h4>
+                    <h5 class="heading-medium">Heading 5</h5>
+                    <h6 class="heading-medium">Heading 6</h6>
+                </div>
             </div>
 
 
             <h3>Paragraphy</h3>
             <div class="well">
-                <!-- p*3>lorem50 -->
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Deleniti necessitatibus     dolorem aspernatur quod alias commodi assumenda ex error recusandae explicabo     consequuntur magni qui aliquid, blanditiis esse illo, reiciendis mollitia doloribus     dignissimos eligendi, totam eum quos. Nesciunt, ut fugit quos repudiandae     voluptatibus neque enim laboriosam magni maxime magnam, quibusdam. Error, cum.</p>
-                <p>Officia quod vero tempore amet omnis est labore, magnam reiciendis dicta, magni     porro quidem cumque veniam quibusdam molestias quia odit incidunt nisi harum     dignissimos sint ipsa eius, dolorem cum. Adipisci libero delectus, id doloremque,     provident aliquid ipsa recusandae enim corporis deserunt porro veniam officia     laboriosam assumenda. Tempore ea, quidem at!</p>
-                <p>Doloremque in enim quidem natus corrupti repellendus earum, facere eius aperiam     doloribus veniam minus maiores aliquid modi beatae quas ullam. Sequi dignissimos     labore, perspiciatis quidem dolorem modi quas at facere praesentium iure,     consequatur. Quam laboriosam, nam nulla facere explicabo ipsam. Ab labore dicta     soluta quas veniam doloremque consectetur illum minus!</p>
+                <div class="well body-text-thin">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Nesciunt, ut fugit quos repudiandae     voluptatibus neque enim laboriosam magni maxime magnam, quibusdam. Error, cum.</p>
+                    <p>Doloremque in enim quidem natus corrupti repellendus earum, facere eius aperiam     doloribus veniam minus maiores aliquid modi beatae quas ullam.</p>
+                </div>
+                <div class="well body-text-light">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Nesciunt, ut fugit quos repudiandae     voluptatibus neque enim laboriosam magni maxime magnam, quibusdam. Error, cum.</p>
+                    <p>Doloremque in enim quidem natus corrupti repellendus earum, facere eius aperiam     doloribus veniam minus maiores aliquid modi beatae quas ullam.</p>
+                </div>
+                <div class="well body-text-regular">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Nesciunt, ut fugit quos repudiandae     voluptatibus neque enim laboriosam magni maxime magnam, quibusdam. Error, cum.</p>
+                    <p>Doloremque in enim quidem natus corrupti repellendus earum, facere eius aperiam     doloribus veniam minus maiores aliquid modi beatae quas ullam.</p>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <div class="container" id ="grid">
-        <h2>Grid</h2>
+    <div class="container" id ="my grid">
+        <h2>Responsive Grids</h2>
         <div class="card soft">
-            <h2 id="basic-grid">Basic Grid</h2>
+            <h3>Grid</h3>
             <div class="grid">
-                <!-- div.col-6>{Column 6}    -->
-                <div class="col-6"><div class="well">Column 6</div></div>
-                <div class="col-6"><div class="well">Column 6</div></div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="well">Col 6</div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="well">Col 6</div>
+                </div>
             </div>
-
             <div class="grid">
-                <div class="col-4"><div class="well">Column 4</div></div>
-                <div class="col-4"><div class="well">Column 4</div></div>
-                <div class="col-4"><div class="well">Column 4</div></div>
-            </div>
-
-            <div class="grid">
-                <div class="col-3"><div class="well">Column 3</div></div>
-                <div class="col-3"><div class="well">Column 3</div></div>
-                <div class="col-3"><div class="well">Column 3</div></div>
-                <div class="col-3"><div class="well">Column 3</div></div>
-            </div>
-
-            <!-- make sure numbers always adds to 12 -->
-            <div class="grid">
-                <div class="col-3"><div class="well">Column 3</div></div>
-                <div class="col-6"><div class="well">Column 6</div></div>
-                <div class="col-3"><div class="well">Column 3</div></div>
-            </div>
-
-
-            <div>
-                <h2>Complex Grids</h2>
+                <div class="col-xs-12 col-md-4">
+                    <div class="well">Col 4</div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="well">Col 4</div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="well">Col 4</div>
+                </div>
             </div>
             
-            <!-- 当numers总数超过12，会自动换行,gridsystem.css中有设定grid工作方式是repeat -->
             <hr>
-            <div class="grid">
-                <div class="col-6"><div class="well">Column 6</div></div>
-                <div class="col-6"><div class="well">Column 6</div></div>
-                <div class="col-3"><div class="well">Column 3</div></div>
-                <div class="col-6"><div class="well">Column 6</div></div>
-                <div class="col-3"><div class="well">Column 3</div></div>
-                <div class="col-12"><div class="well">Column 12</div></div>
-            </div>
-
-            
-            <!-- sub grid -->
-            <hr>
-            <div class="grid">
-                <div class="col-6"><div class="well">
-                    <div class="grid">
-                        <div class="col-3"><div class="well">3</div></div>
-                        <div class="col-3"><div class="well">3</div></div>
-                        <div class="col-3"><div class="well">3</div></div>
-                        <div class="col-3"><div class="well">3</div></div>
-                    </div>
-                </div></div>
-                <div class="col-6"><div class="well">
-                    <div class="grid">
-                        <div class="col-4"><div class="well">4</div></div>
-                        <div class="col-4"><div class="well">4</div></div>
-                        <div class="col-4"><div class="well">4</div></div>
-                    </div>
-                </div></div>
-            </div>
-        </div>
-    </div>
-    
-
-    <div class="container">
-        <div class="card soft">
-            <div>
-                <h2>Responsive Grids</h2>
-            </div>
-            <div class="grid">
-                <div class="col-xs-12 col-md-6">
-                    <div class="well">Col 6</div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <div class="well">Col 6</div>
-                </div>
-            </div>
-            <!-- 这是最常用的responsive设置
-            <div class="grid">
-                <div class="col-xs-12 col-md-6">
-                    <div class="well">Col 6</div>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <div class="well">Col 6</div>
-                </div>
-            </div>   -->
-
-            <hr>
+            <h3>Grid Gap</h3>
             <div class="grid gap">
                 <div class="col-xs-6 col-md-3">
                     <div class="well">Col 3</div>
@@ -1009,9 +950,6 @@
                     <div class="well">Col 3</div>
                 </div>
             </div>
-
-
-
 
             <hr>
             <div class="grid gap large">
@@ -1024,29 +962,69 @@
                 <div class="col-xs-12 col-md-4 col-xl-6">
                     <div class="well">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Error velit praesentium quos quidem in? Vel maiores ipsum nulla dicta aperiam vero laborum, debitis. Sit, aliquid? Unde, odio harum! Quo dolore adipisci esse doloremque dolor facilis! Temporibus optio eaque enim, magni minima officiis, amet voluptates veniam aspernatur delectus nihil cumque repudiandae?</div>
                 </div>
+            </div>    
+        </div>
+    </div>
+
+    <div class="container" id="my-view-window">
+        <h2>View Window</h2>
+        <div class="view-window display-block" style="background-image:url(img/background001.jpg) ">
+            <div class="slogan heading-bold">HUI <br> A CULTURAL AND MINIMALISM HOME </div>
+        </div>
+    </div>
+
+    <div class="container" id="my-navigation">
+        <h2>Navigation</h2>
+
+        <h3>Header</h3>
+        <header class="navbar">
+            <div class="grid display-flex flex-align-center">
+                <div class="col-xs-12 col-md-3" style="margin:auto;">
+                    <img src="img/logo001.png" class="logo">
+                </div>
+
+                <nav class="nav pills col-xs-12 col-md-6">
+                    <ul> 
+                        <li><a href="#" class="heading-bold">Home</a></li>
+                        <li><a href="#" class="heading-bold">Product</a></li>
+                        <li><a href="#" class="heading-bold">Gallery</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="nav pills col-xs-12 col-md-3">
+                    <ul> 
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </nav>
             </div>
-            
+        </header> 
+
+        <div class="card soft">
+            <h3>Breadcrumb Nav</h3>
+            <nav class="nav crumbs">
+                <ul> 
+                    <li><a href="#" class="heading-medium">Home</a></li>
+                    <li><a href="#" class="heading-medium">Product</a></li>
+                    <li><a href="#" class="heading-medium">Item</a></li>
+                    <li><a href="#" class="heading-medium">Cart</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 
 
-    <div class="container">
-        <div class="card soft">
-            <div>
-                <h2>Layout</h2>
-            </div>
-        </div>
-
-        <div>
-            <h3>Popular Sets</h3>
-        </div>
+    <div class="container" id="my-layout">
+        <h2>Layout</h2>  
+        <h3>Popular Sets</h3>
 
         <div class="card flat display-flex">
-            <div class="grid gap">
+            <div class="grid gap large">
                 <div class="col-xs-12 col-md-8 display-flex flex-align-center flex-justify-center">
                     <div class="flex-stretch">  
-                        <!-- 或者去掉上一层div和flex-stretch,只保留<img src="img/gray000.png" alt="" style="margin:1em;height:300px"> 设置啦margin就可以让图片四周有空间-->
-                         <img src="img/gray000.png" alt="" style="margin:1em;height:300px">
+                        <!-- 或者去掉上一层div和flex-stretch,只保留<img src="img/gray000.png" alt="" style="margin:1em;height:300px"> 设置margin就可以让图片四周有空间-->
+                         <img src="img/gray000.png" alt="" style="height:300px">
                     </div> 
                 </div>
                 <div class="col-xs-12 col-md-4 display-flex flex-align-center flex-justify-center">
@@ -1054,7 +1032,7 @@
                         <div class="article-body">
                             <h3>HUI</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing eli</p>
-                            <nav class="nav pills price" style="width:40%"><a href="#">Shop Now</a></nav>
+                            <!-- <nav class="nav pills price" style="width:40%"><a href="#">Shop Now</a></nav> -->
                         </div>
                     </article>
                 </div>
@@ -1090,48 +1068,8 @@
     </div>
 
 
-    <div class="container" id="view-window">
-        <h2>View Window</h2>
-
-        <div class="view-window" style="background-image:url(img/background001.jpg)"></div>
-    </div>
 
 
-    <div class="container" id="navigations">
-        <h2>Navigations</h2>
-
-        <script>
-        const makeNav = (classes='') =>  {
-            const links = ['Home','Product','Gallery','Account'];
-            document.write(`
-            <div>
-            <nav class="${classes}">
-                <ul>
-                    ${links.reduce((r,o,i)=>r+`<li><a href="#">${o}</a></li>`,'')}
-                </ul>
-            </nav>
-            </div>
-            `)
-        }
-        </script>
-
-
-        <div class="card soft">
-            <h3>Flex Nav</h3>
-            <script>makeNav('nav flex')</script>
-        </div>
-
-
-        <div class="card soft">
-            <h3>Pills Nav</h3>
-            <script>makeNav('nav pills')</script>
-        </div>
-
-        <div class="card soft">
-            <h3>Breadcrumb Nav</h3>
-            <script>makeNav('nav crumbs')</script>
-        </div>
-    </div>
 
 
 </body>

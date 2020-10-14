@@ -1,66 +1,83 @@
 :root {
-	--color-neutral-light:#f0ecec;
-	--color-neutral-medium:#9e8d8d;
-	--color-neutral-dark:#392f2f;
+	--color-neutral-light:#F2F2F2;  /*已改*/
+	--color-neutral-medium:#707070;  /*已改*/
+	--color-neutral-dark:#353535;  /*已改*/
 
-	--color-main-light:#bcebff;
-	--color-main-medium:#c92811;
+	--color-main-light:#B2C5D9; /*已改*/
+	--color-main-medium:#2A6AA3; /*已改*/
 	--color-main-dark:#08435c;
 
-	--color-alt-light:#e5d7fa;
+	--color-alt-light:#F4E9E4; /*已改 粉色*/
 	--color-alt-medium:#07aff5;
 	--color-alt-dark:#27055c;
 
-	--color-warning:#ea9310;
+	--color-warning:#CB8B12;  /*已改*/
 	--color-error:#d90c63;
-	--color-purchase:#49ec80;
+	--color-purchase:#C92811; /*已改*/
 }
 
 
-
-body {
+.body-text-thin {
+	font-family:Roboto, sans-serif;
+	font-weight:100;
+	/*background-color: var(--color-neutral-light);*/
+}
+.body-text-light {
 	font-family:Roboto, sans-serif;
 	font-weight:300;
-	background-color: #f9f9f9;
-	line-height: 150%;
+	/*background-color: var(--color-neutral-light);*/
+}
+.body-text-regular {
+	font-family:Roboto, sans-serif;
+	font-weight:400;
+	/*background-color: var(--color-neutral-light);*/
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.heading-bold {
+	font-family:Montserrat, sans-serif;
+	font-weight:700;
+}
+.heading-medium {
 	font-family:Montserrat, sans-serif;
 	font-weight:500;
-	line-height:100%;
 }
 
+
+/*
 .body {
 	margin-top:3em;
 	margin-bottom:3em;
+}*/
+
+
+.navbar {
+    background-color: var(--color-neutral-light);
+    color:var(--color-neutral-dark);
 }
 
 
-.navbar{
-	background-color: #ff6700;
-	line-height: 4rem;
+.logo {
+	max-width: 120px;
 }
 
-.navbar h1 {
-	font-size:2em;
-}
 
-.view-window>h2 {
+.view-window .slogan {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	background-color: rgb(191 190 190 / 30%);
-	padding:1em;
-	border-radius:0.5em;
-	color:white;
-	font-size:2em;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fbfbfb61;
+    padding: 1em;
+    border-radius: 0.5em;
+    color: #c71818;
+    font-size: 2em;
+    width: 80%;
+    line-height: 100%;
+    transition: all 0.3s;
+}
+
+.slogan:hover {
+	box-shadow: 1px 1px 12px rgba(0,0,0,0.4);
 }
 
 
