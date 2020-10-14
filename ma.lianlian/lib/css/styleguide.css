@@ -9,11 +9,9 @@
 	--color-neutral-light:#eee;
 	--color-neutral-medium:#999;
 	--color-neutral-dark:#444;
-
 	--color-white:#fff;
 	--color-black:#000;
-
-	--header-height:5rem; 
+	--header-height:5rem;
 }
 
 body {
@@ -190,7 +188,7 @@ code {
 
 .well {
 	padding: 0.5em;
-	background-color: var(--color-neutral-light);
+    background-color: var(--color-neutral-light);
 	margin: 5px; 
 }
 .well .well {
@@ -290,6 +288,7 @@ code {
 .btn:hover,
 .form-button:hover {
     text-decoration: none;
+
 }
     .btn.inline {
         width: initial;
@@ -297,8 +296,10 @@ code {
 
     .btn.sell {
         background-color: var(--color-purchase);
-
     }
+
+    
+    
 
 
 

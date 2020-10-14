@@ -2,21 +2,21 @@
 	--color-neutral-light:#F2F2F2;  /*已改*/
 	--color-neutral-medium:#707070;  /*已改*/
 	--color-neutral-dark:#353535;  /*已改*/
-
-	--color-main-light:#B2C5D9; /*已改*/
+	--color-main-light:#d7e8fa9c; /*已改*/
 	--color-main-medium:#2A6AA3; /*已改*/
 	--color-main-dark:#08435c;
-
-	--color-alt-light:#F4E9E4; /*已改 粉色*/
+	--color-alt-light: #ffdecf; /*已改 粉色*/
 	--color-alt-medium:#07aff5;
 	--color-alt-dark:#27055c;
-
 	--color-warning:#CB8B12;  /*已改*/
 	--color-error:#d90c63;
 	--color-purchase:#C92811; /*已改*/
 }
 
-
+body {
+	font-family:Roboto, Arial,sans-serif;
+	font-weight:400;
+}
 .body-text-thin {
 	font-family:Roboto, sans-serif;
 	font-weight:100;
@@ -42,6 +42,9 @@
 	font-weight:500;
 }
 
+.well {
+	background-color: var(--color-main-light);
+}
 
 /*
 .body {
@@ -80,13 +83,82 @@
 	box-shadow: 1px 1px 12px rgba(0,0,0,0.4);
 }
 
+.btn.sell {
+       color:var(--color-white);
+       border:1px solid var(--color-purchase);
+}
+
+.btn.sell .secondary {
+        background-color: var(--color-alt-light);
+        border:1px solid var(--color-purchase);
+        color: var(--color-purchase);
+}
+
+.btn.border {
+	border:1px solid var(--color-neutral-dark);
+}
+
+.btn.color-option {
+/*	border:1px solid var(--color-neutral-dark);*/
+	background-color: var(--color-main-medium);
+	color: var(--color-white);
+}
+
+.btn-numbox {
+	display: inline-block;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--color-alt-light);
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--color-neutral-dark);
+ }
+
+.btn-numbox-subtract {
+	float: left;
+    height: 30px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-numbox-number {
+	float: left;
+    height: 30px;
+    width: 40px;
+    text-align: center;
+}
+
+.btn-numbox-plus {
+	float: left;
+	height: 30px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.table.striped tbody tr:nth-child(odd) {
+    background-color: var(--color-main-light);
+}
+
+.toggle label {
+	background-color: var(--color-main-medium);
+    border:0.1em solid var(--color-main-light);
+}
+
+/*.btn:hover {
+    text-decoration: none;
+    background-color: var(--color-alt-light);
+    border: 2px solid var(--color-purchase);
+    color:var(--color-neutral-dark);
+}*/
 
 /*.article-body>h3 {
 color:#ff6700;
 }*/
 
 
-.button {
+/*.button {
 	width:10em;
 	height:3em;
 	margin-bottom: 2em;
@@ -97,9 +169,9 @@ color:#ff6700;
 .button>a {
 	font-size:1.5em;
 	color:white;
-}
+}*/
 
-.nav.pills.price a {
+/*.nav.pills.price a {
     	background-color:var(--color-main-medium);
     	color: var(--color-white);
     	text-align: center;
@@ -108,11 +180,11 @@ color:#ff6700;
     	background-color: var(--color-alt-medium);
     	text-decoration: none;
     }
-
+*/
 hr {
 	margin-top:2em;
     border: 0.1px solid #bbbcbd;
-    width: 90%;
+    width: 100%;
 }
 
 footer {
@@ -131,11 +203,12 @@ footer {
 
 /* Product List Design */
 .product-item {
-	margin: 0;
-	border-radius: 0.7em;
+	/*margin: 0;*/
+	margin: 1em;
+	border-radius: 0.2em;
 	background-color: white;
 	box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-	padding:1em;
+	/*padding:1em;*/
 	transition: all 0.3s;
 }
 .product-item:hover {
@@ -145,19 +218,21 @@ footer {
 .product-image img {
 	max-width: 100%;
 }
-/*
-a:hover .product-item {
-	text-decoration: none;
 
-}*/
+.product-description {
+	height:5rem;
+}
 .product-price {
 	font-size: 1.2em;
 	padding: 0.2em 0.4em;
+	color: var(--color-main-medium);
 }
 .product-title {
 	font-size: 0.9em;
 	padding: 0.2em 0.4em;
 }
+
+
 
 
 
