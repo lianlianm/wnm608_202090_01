@@ -8,30 +8,30 @@ $users = file_get_json("users.json");
 
 
 function showUserPage ($user) {
-	$class = implode(", ", $user->classes);
+$classes = implode(", ", $user->classes);
 
-	echo <<<HTML
-	<nav class="nav crumbs">
-		<ul>
-			<li><a href="{$_SERVER['PHP_SELF']}">Back</a></li>
-		</ul>
-	</nav>
+echo <<<HTML
+<nav class="nav crumbs">
+	<ul>
+	    <li><a href="{$_SERVER['PHP_SELF']}">Back</a></li>
+	</ul>
+</nav>
+<div>
+	<h2>$user->name</h2>
 	<div>
-		<h2>$user->name</h2>
-		<div>
-			<strong>Type</strong>
-			<span>$user->type</span>
-		</div>
-		<div>
-			<strong>Email</strong>
-			<span>$user->email</span>
-		</div>
-		<div>
-			<strong>Classes</strong>
-			<span>$classes</span>
-		</div>
+		<strong>Type</strong>
+		<span>$user->type</span>
 	</div>
-	HTML;
+	<div>
+		<strong>Email</strong>
+		<span>$user->email</span>
+	</div>
+	<div>
+		<strong>Classes</strong>
+		<span>$classes</span>
+	</div>
+</div>
+HTML;
 }
 
 ?><!DOCTYPE html>
@@ -64,7 +64,7 @@ function showUserPage ($user) {
 
 			<?php
 
-			if(isset($_GET['id'])){
+			if(isset($_GET['id'])) {
 
 				showUserPage($users[$_GET['id']]);
 

@@ -74,6 +74,7 @@ echo $fullname;
 
 <?php
 
+
 // Superglobal
 
 // ?name=Joey
