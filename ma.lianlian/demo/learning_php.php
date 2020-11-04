@@ -1,7 +1,7 @@
 <?php
 
 // hello;
-// phpinfo();
+// phpinfo(); 浏览器中会显示你的PHP版本信息
 
 echo "<h1>Hello Word</h1>";
 echo "<div>Goodbye Word</div>";
@@ -10,8 +10,8 @@ echo "<div>Goodbye Word</div>";
 $a = 5;
 
 // String Interpolation
-echo "<div> I have $a things</dv>";
-echo '<div> I have $a things</dv>';
+echo "<div> I have $a things</div>";
+echo '<div> I have $a things</div>';
 
 
 // VALUE TYPES
@@ -46,7 +46,7 @@ echo (5 + 4) * 2;
 
 // Concatenation
 echo "<div>$b + $a = $b+$a</div>";
-echo "<div>$b + $a = " . "c</div>";
+echo "<div>b + a = " . "c</div>";
 echo "<div>$b + $a = " . ($b+$a) . "</div>";
 
 ?>
@@ -84,7 +84,8 @@ echo "<div>My name is {$_GET['name']}</div>";
 
 echo "<div><a href='?name={$_GET['name']}&type=h1'>H1</a></div>";
 echo "<div><a href='?name={$_GET['name']}&type=button'>BUTTON</a></div>";
-echo "";
+echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
+
 
 ?>
 
@@ -120,6 +121,9 @@ echo count($colors);
 
 // Associative Array
 $colorsAssociative = [
+   "red" => "#f00",
+   "green" => "#0f0",
+   "blue" => "#00f"
 ];
 
 
@@ -133,7 +137,7 @@ echo $colorsAssociative['red'];
 
 // Casting
 $c = "$a";
-$d = $c*1;  // Number()
+$d = $c*1;  
 
 $colorsObject = (object)$colorsAssociative;
 

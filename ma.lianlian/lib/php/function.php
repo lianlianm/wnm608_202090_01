@@ -1,7 +1,6 @@
 <?php
 
-
-
+// print pretty
 function print_p($d) {
 	echo "<pre>",print_r($d),"</pre>";	
 }

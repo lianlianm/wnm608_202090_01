@@ -1,24 +1,25 @@
 <?php
 
-$filename = "json_notes_json";
-$file = file_get_contents($filename);
-$notes_object = json_decode($file);
+include "../lib/php/function.php";
 
-print_p($notes);
+$notes_object = file_get_json("json_notes.json");
+$users_array = file_get_json("users.json");
 
-?><!DOCTYPE html>
+// print_p($notes_object);
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Notes</title>
 
-	<?php include "../parts/meta.php"; 
+	<?php include "../parts/meta.php"; ?>
 
-	$notes_object = 
-	?>
 </head>
 <body>
+
 	<header class="navbar">
 		<div class="container">
 			<h1>Notes</h1>
@@ -37,7 +38,6 @@ print_p($notes);
 				echo "<li>".
 				$notes_object->notes[$i].
 				"</li>\n";
-
 			}
 
 			?>
@@ -57,14 +57,12 @@ print_p($notes);
 				<strong>{$users_array[$i]->name}</strong>
 				<span>{$users_array[$i]->type}</span>
 				</li>\n";
-
 			}
 
 			?>
 		    </ul>
+		    
 		</div>
-
-
 	</div>
 
 </body>

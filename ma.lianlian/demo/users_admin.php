@@ -4,6 +4,9 @@ include "../lib/php/functions.php";
 
 $users = file_get_json("users.json");
 
+
+
+
 function showUserPage ($user) {
 	$class = implode(", ", $user->classes);
 
@@ -30,7 +33,6 @@ function showUserPage ($user) {
 	</div>
 	HTML;
 }
-
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -84,6 +86,8 @@ function showUserPage ($user) {
 
 			?>
 		    </ul>
+
+		    
 		    <?php } ?>
 		</div>
 	</div>
