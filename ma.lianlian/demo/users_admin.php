@@ -30,6 +30,36 @@ echo <<<HTML
 		<strong>Classes</strong>
 		<span>$classes</span>
 	</div>
+
+	<form class="form-control user-form" action="users_admin.php" method="post" >
+        <label  class="heading-bold">Update User Information:</label>
+
+        <input type="text" placeholder="User Name" class="form-input"><br>
+
+        <div class="form-select">
+        <select style="background-color:transparent; border:1px solid var(--color-neutral-medium);">
+            <option value="" selected="">Please Select User Type</option>
+            <option value="teacher">Teacher</option>
+            <option value="single">Singe</option>
+            <option value="actor">Actor</option>
+            <option value="chef">Chef</option>
+            <option value="who Knows">Who Knows</option>
+        </select>
+        </div>
+   
+        <input type="email" placeholder="User Email" class="form-input"><br>
+        <input type="text" placeholder="User Classes" class="form-input"><br>
+
+        <div class="form-control">
+            <button class="btn color-option inline">Submit</button>
+        </div>
+
+	</form>
+
+	
+
+
+
 </div>
 HTML;
 }

@@ -10,8 +10,8 @@ echo "<div>Goodbye Word</div>";
 $a = 5;
 
 // String Interpolation
-echo "<div> I have $a things</div>";
-echo '<div> I have $a things</div>';
+echo "<div> I have $a things</div>";  // I have 5 things
+echo '<div> I have $a things</div>';  // I have $a things
 
 
 // VALUE TYPES
@@ -19,7 +19,7 @@ echo '<div> I have $a things</div>';
 // Number
 // Integer整数
 $b = 15;
-// Float
+// Float小数点
 $b = 0.576;
 
 
@@ -60,7 +60,7 @@ echo "<div>$b + $a = " . ($b+$a) . "</div>";
 
 $firstname = 'Lianlian';
 $lastname = 'Ma';
-$fullname = "$firstname $lastname";
+$fullname = "$firstname $lastname";  //这儿$firstname与$lastname之间有space，则显示就会有space
 
 echo $fullname;
 
@@ -86,7 +86,7 @@ echo "<div>My name is {$_GET['name']}</div>";
 echo "<div><a href='?name={$_GET['name']}&type=h1'>H1</a></div>";
 echo "<div><a href='?name={$_GET['name']}&type=button'>BUTTON</a></div>";
 echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
-
+// 把<div>改换成<{$_GET['type']}>
 
 ?>
 
