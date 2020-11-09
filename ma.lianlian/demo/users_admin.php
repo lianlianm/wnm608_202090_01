@@ -4,13 +4,17 @@ include "../lib/php/functions.php";
 
 $users = file_get_json("users.json");
 
+// print_p([$_GET,$_POST]); 
+// 这是为了在浏览器中显示get和post的代码内容
 
+if(isset($_POST))
 
 
 function showUserPage ($user) {
 $classes = implode(", ", $user->classes);
 
 echo <<<HTML
+<div class="card soft">
 <nav class="nav crumbs">
 	<ul>
 	    <li><a href="{$_SERVER['PHP_SELF']}">Back</a></li>
@@ -40,7 +44,7 @@ echo <<<HTML
         <select style="background-color:transparent; border:1px solid var(--color-neutral-medium);">
             <option value="" selected="">Please Select User Type</option>
             <option value="teacher">Teacher</option>
-            <option value="single">Singe</option>
+            <option value="singer">Singer</option>
             <option value="actor">Actor</option>
             <option value="chef">Chef</option>
             <option value="who Knows">Who Knows</option>
@@ -90,8 +94,6 @@ HTML;
 
 
 	<div class="container">
-		<div class="card soft">
-
 			<?php
 
 			if(isset($_GET['id'])) {
@@ -102,6 +104,7 @@ HTML;
 
 			?>
 
+			<div class="card soft">
 			<h2>User List</h2>
 
 			<ul>
