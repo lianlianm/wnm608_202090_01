@@ -2,7 +2,7 @@
 
 include "../lib/php/functions.php"; 
 
-$filename = "user.json";
+$filename = "users.json";
 $users = file_get_json($filename);
 
 // print_p([$_GET,$_POST]); 
@@ -24,10 +24,10 @@ switch(@$_GET['crud']){
 	    $user[$_GET['id']]->email = $_POST['user_email'];
 	    $user[$_GET['id']]->classes = explode(", ",$_POST['user_classes']);
     
-	    file_put_contents($filename, json_encode($users));
+	    file_put_contents($filename,json_encode($users));
     
-	    header("location:{$_SERVER['PHP_SELF']}?id={$_GET[['id']}");
-	    breadk;
+	    header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
+	    break;
 
 
 	case 'create':
@@ -42,8 +42,8 @@ switch(@$_GET['crud']){
     
 	    file_put_contents($filename,json_encode($users));
     
-	    header("location:{$_SERVER['PHP_SELF']}?id={$_GET[['id']}");
-	    breadk;
+	    header("location:{$_SERVER['PHP_SELF']}?id=$id");
+	    break;
 
 
 	case 'delete':
@@ -52,7 +52,7 @@ switch(@$_GET['crud']){
 	    file_put_contents($filename,json_encode($users));
 
 	    header("location:{$_SERVER['PHP_SELF']}");
-	    breadk;
+	    break;
 }
 
 
@@ -117,10 +117,10 @@ echo <<<HTML
                 </div>
                 <div class="form-control">
                     <label for="user-classes" class="form-label">classes</label>
-                    <input id="user-classes" name="user-classes" type="text" placeholder="Type user classes" class="form-input" value="$user->classes">
+                    <input id="user-classes" name="user-classes" type="text" placeholder="Type user classes" class="form-input" value="classes">
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-buttom" type=value="Save">
+                    <input type="submit" class="form-buttom" value="Save">
                 </div>
             </form>
         </div>
