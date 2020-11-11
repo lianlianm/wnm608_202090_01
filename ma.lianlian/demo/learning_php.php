@@ -3,33 +3,39 @@
 // hello;
 // phpinfo(); 浏览器中会显示你的PHP版本信息
 
+echo "Hello Word";
 echo "<h1>Hello Word</h1>";
 echo "<div>Goodbye Word</div>";
+// echo 中内容是显示在浏览器中的
+// echo 中也可以放入html code，且会按照html的规则运行出来
 
 
-$a = 5;
 
-// String Interpolation
+$a = 5; //$ is a symbol of variales 变量
+
+// String Interpolation 插入字符串
 echo "<div> I have $a things</div>";  // I have 5 things
 echo '<div> I have $a things</div>';  // I have $a things
+//in PHP, single quotation strings do not interpolate variables 单引号字符串不运行插入变量
 
 
 // VALUE TYPES
 
-// Number
-// Integer整数
+// 1. Number: integer整数, float小数
+
+// Integer
 $b = 15;
-// Float小数点
+
+// Float
 $b = 0.576;
 
 
-$b = 10;
+//2. String 
+$name = "Yerguy"; // a string of character
+$name = 'Hamilton'; // 单引号双引号都可以作为一个字符串
 
-// String 
-$name = "Yerguy";
-$name = 'Hamilton';
-
-// Boolean
+//3. Boolean  
+// boolean is about true or false
 $isOn = true;
 
 // function, class, object
