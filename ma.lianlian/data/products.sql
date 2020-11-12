@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 09, 2020 at 01:22 AM
+-- Generation Time: Nov 11, 2020 at 03:14 PM
 -- Server version: 5.6.49-cll-lve
 -- PHP Version: 7.3.6
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
+  `title` varchar(64) NOT NULL,
   `url` varchar(256) NOT NULL,
   `price` decimal(9,2) NOT NULL,
   `date_create` datetime NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `url`, `price`, `date_create`, `date_modify`, `category`, `image_main`, `image_other`, `image_thumb`, `description`, `quantity`) VALUES
+INSERT INTO `products` (`id`, `title`, `url`, `price`, `date_create`, `date_modify`, `category`, `image_main`, `image_other`, `image_thumb`, `description`, `quantity`) VALUES
 (1, 'Flowerpot1', '', 12.99, '2020-11-09 01:03:04', '2020-11-09 01:03:04', 'hui', 'hui/flowerpot1_main.jpg', 'hui/flowerpot1_1.jpg,hui/flowerpot1_2.jpg,hui/flowerpot1_3.jpg', 'hui/flowerpot1_thumb.jpg', 'Huizhou architectural elements.', 20),
 (2, 'Flowerpot2', '', 12.99, '2020-11-09 01:08:44', '2020-11-09 01:08:44', 'hui', 'hui/flowerpot2_mian.jpg', 'hui/flowerpot2_1.jpg,hui/flowerpot2_2.jpg,hui/flowerpot2_3.jpg', 'hui/flowerpot2_thumb.jpg', 'Huizhou architectural elements.', 20),
 (3, 'Flowerpot3', '', 12.99, '2020-11-09 01:08:44', '2020-11-09 01:08:44', 'hui', 'hui/flowerpot3_mian.jpg', 'hui/flowerpot3_1.jpg,hui/flowerpot3_2.jpg,hui/flowerpot3_3.jpg', 'hui/flowerpot3_thumb.jpg', 'Huizhou architectural elements.', 20),

@@ -1,4 +1,10 @@
- <!DOCTYPE html>
+<?php
+
+include_once "lib/php/functions.php";
+
+$product = MYSQLIQuery("SELECT *FROM prducts WHERE id = {$_GET")
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Product Item</title>
@@ -12,10 +18,25 @@
     
 
     <div class="container">
-        <div class="card soft">
-            <h2>Product Item</h2>
+        <div class="grid gap">
 
-            <div>This is the product #<?= $_GET['id'] ?></div>
+        <!-- <h2>Product Item</h2> -->
+<!-- 
+            <?php
+            // echo array_reduce(
+            //          MYSQLIQuery("SELECT * FROM products WHERE id = {$_GET['id']}"),
+            //          function($r,$o) {
+            //             return $r."<div>$o->title</div>";
+            //          }
+            //     );
+            ?> 
+ -->
+
+        
+
+
+
+            <!-- <div>This is the product #<?= $_GET['id'] ?></div> -->
             <div><a href="added_to_cart.php">Add To Cart</a></div>
         </div>
     </div>
