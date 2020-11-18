@@ -30,6 +30,8 @@ $b = 15;
 $b = 0.576;
 
 
+$b = 10;
+
 //2. String 
 $name = "Yerguy"; // a string of character
 $name = 'Hamilton'; // 单引号双引号都可以作为一个字符串
@@ -38,22 +40,29 @@ $name = 'Hamilton'; // 单引号双引号都可以作为一个字符串
 // boolean is about true or false
 $isOn = true;
 
-// function, class, object
+// 其他value类型：function, class, object
+
+
+
 
 
 // Math
 
+
+echo 5 + 4; // website 显示9
+echo $b +4; //因为最后一个b赋值为10， 所有website显示14 
+echo 5 + 4 * 2; // 13，按照正常math的运算顺序来
+
 // Order of Operation
-// PEMDAS
-echo 5 + 4;
-echo 5 + 4 * 2;
-echo (5 + 4) * 2;
+// PEMDAS 运算次序，运算优先级
+echo (5 + 4) * 2; // 18，按照优先级运算顺序来
 
 
-// Concatenation
-echo "<div>$b + $a = $b+$a</div>";
-echo "<div>b + a = " . "c</div>";
-echo "<div>$b + $a = " . ($b+$a) . "</div>";
+
+// Concatenation系列关联的事物
+echo "<div>$b + $a = $b+$a</div>"; // 10 + 5 = 10+5   没有产生concatenation的效果，因为+在php中只代表addition
+echo "<div>b + a = " . "c</div>"; // b + a = c      PHP中 . 表示concatenation or combine .符号前后的two strings together, 以上string A是"<div>b + a = "， string B是"c</div>"
+echo "<div>$b + $a = " . ($b+$a) . "</div>"; // 10 + 5 = 15
 
 ?>
 
@@ -61,7 +70,6 @@ echo "<div>$b + $a = " . ($b+$a) . "</div>";
 <hr>
 <div>This is my name</div>
 <div>
-
 <?php
 
 $firstname = 'Lianlian';
@@ -71,9 +79,9 @@ $fullname = "$firstname $lastname";  //这儿$firstname与$lastname之间有spac
 echo $fullname;
 
 ?>
-	
-
 </div>
+
+
 
 
 <hr>
@@ -81,18 +89,22 @@ echo $fullname;
 <?php
 
 
-// Superglobal
+// Superglobal 超全局变量，其中$_GET $_POST非常常用，都是基于URL收集数据，但post比get传输数据安全
 
-// ?name=Joey
+// ?name=Joey 是一个URL
 
-echo "<div><a href='?name=Joey'>Joey</a></div>";
-echo "<div><a href='?name=Frank'>Frank</a></div>";
-echo "<div>My name is {$_GET['name']}</div>";
+echo "<div><a href='?name=Joey'>Joey</a></div>"; //我们赋值name是Joey
+echo "<div><a href='?name=Frank'>Frank</a></div>"; //我们赋值name是Frank
+echo "<div>My name is {$_GET['name']}</div>"; //当我们点击Joey时，发送name的值给表单，则{$_GET['name']} = Joey, 当点击Frank时 同理
+
 
 echo "<div><a href='?name={$_GET['name']}&type=h1'>H1</a></div>";
 echo "<div><a href='?name={$_GET['name']}&type=button'>BUTTON</a></div>";
 echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
-// 把<div>改换成<{$_GET['type']}>
+// 把<div>改换成<{$_GET['type']}>， 就是My name is {$_GET['name']}外面应用的html标签也成为变量，取决于你点击H1 还是BUTTON。 比如点击Joey,显示My name is Joey, 然后点击H1 则变成<h1>My name is Joey</h1>的结果 字变大，若点击BUTTON 则变成<button>My name is Joey</button>的结果  变成文字按钮
+
+// 以上get or post应用非常非常非常有用，可以以此类型create many cool pages!!!!!!!!
+
 
 ?>
 
@@ -101,40 +113,47 @@ echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
 
 <?php
 
-// Arrays
+// Arrays 数组
+// [] 等同于 array(),都是创建一个数组，array(key => value, ...)
 $colors =  array("red","green", "blue");
-$colors = ["red","green","blue"];
+$colors = ["red","green","blue"]; 
 
-echo $colors[1];
+echo $colors[1]; // red    $color[这其中是要输入数值，从0开始]
 
 echo "
     <br>$colors[0];
     <br>$colors[1];
     <br>$colors[2]
-";
+";  
+// red
+// green
+// blue
 
 
-echo count($colors);
+
+echo count($colors); // 3
 
 ?>
-
+ 
 
 <div style="color:<?= $colors[1] ?>">
     This text is green
-</div>
+</div> 
+<!-- 将green颜色代入 -->
 
 
 <?php
 
-// Associative Array
+// Associative Array 联合数组
+// => 用在数组中，是指对应关系，相当于value
+
 $colorsAssociative = [
    "red" => "#f00",
    "green" => "#0f0",
    "blue" => "#00f"
 ];
 
-
-echo $colorsAssociative['red'];
+echo $colorsAssociative['red']; // #foo
 
 ?>
 
@@ -154,30 +173,38 @@ $colorsObject = (object)$colorsAssociative;
 echo "<hr>";
 
 // Array Index Notation
-echo $colors[0]."<br>";
-echo $colorsAssociative['red']."<br>";
-echo $colorsAssociative[$colors[0]]."<br>";
+echo $colors[0]."<br>"; // red
+echo $colorsAssociative['red']."<br>"; // #foo
+echo $colorsAssociative[$colors[0]]."<br>"; // #foo
 
-// Object Property Notation
-echo $colorsObject->red."<br>";
-echo $colorsObject->{$colors[0]}."<br>";
-
+// Object Property Notation ->
+// -> 是指对象属性符号，比如下面是从$colorObject中调用red
+echo $colorsObject->red."<br>"; // #foo
+echo $colorsObject->{$colors[0]}."<br>"; // #foo
 
 ?>
 
 <hr>
 
+
+
+
+
 <?php
 
-print_r($colors);
+//PHP中动态输出HTML内容，是通过print 和 echo 语句来实现的，在实际使用中， print 和 echo 两者的功能几乎是完全一样。 但， echo可以同时输出多个字符串，而print只可以同时输出一个字符串
+
+print_r($colors); // Array([0]=>red[1]=>green[2]=>blue)
 echo "<hr>";
-print_r($colorsAssociative);
+print_r($colorsAssociative); // Array([red]=>#foo[green]=>#ofo[blue]=>#oof)
 echo "<hr>";
-echo "<pre>",print_r($colorsObject),"</pre>";
+echo "<pre>",print_r($colorsObject),"</pre>"; // html的<pre></pre>标签用可定义预格式化的文本。 被包围在pre 元素中的文本通常会保留空格和换行符。 而文本也会呈现为等宽字体。 
 
 
 
-// CUSTOM FUNCTIONS
+// CUSTOM FUNCTIONS 自创建function
+// 如下就是自定义一个print_p功能
+
 function print_p($d) {
     echo "<pre>",print_r($d),"</pre>";
 }
