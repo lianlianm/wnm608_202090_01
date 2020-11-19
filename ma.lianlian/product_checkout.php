@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+
+include_once "lib/php/functions.php";
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Product Checkout</title>
@@ -15,7 +19,7 @@
             <a href="./">Cancel</a>
 
             <div>Fill in your information</div>
-            <div><a href="product_confirmation.php">Pay</a></div>
+            <div><a href="product_actions.php?action=reset-cart">Pay</a></div>
         </div>
     </div>
     

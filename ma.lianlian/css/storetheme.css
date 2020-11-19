@@ -259,7 +259,12 @@ footer {
 }
 
 
-
+span.badge::after {
+	content:')';
+}
+span.badge::before {
+	content:'(';
+}
 
 
 

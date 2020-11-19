@@ -36,15 +36,24 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
             </div>
          </div>
          <div class="col-xs-12 col-md-5">
-            <div class="card soft flat">
+            <form class="card soft flat" method="post" action="product_actions.php?action=add-to-card">
+               <input type="hidden" name="product-id" value="<?= $product->id ?>">
                <div class="card-section">
                   <h2><?= $product->title ?></h2>
                   <div>&dollar;<?= $product->price ?></div>
                </div>
                <div class="card-section">
-                  <a href="added_to_cart.php" class="form-button">Add To Cart</a>
+                  <label for="product-amount">Amount</label>
+                  <div class="form-select">
+                     <select name="product-amount" id="product-amount"><!-- option[value=$]*10>{$}  -->
+                     option[value=$]*10>{$}
+                     </select>
+                  </div>
                </div>
-            </div>
+               <div class="card-section">
+                  <input type="submir" class="form-button" value="Add To Cart">
+               </div>
+            </form>
          </div>
       </div>
       <div class="card soft medium">

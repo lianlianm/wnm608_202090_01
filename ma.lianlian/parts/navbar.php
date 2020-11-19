@@ -10,7 +10,10 @@
 				<ul class="display-flex">
 					<li><a href="product_list.php">Shop</a></li>
 					<li><a href="about.php">About</a></li>
-					<li><a href="product_cart.php">Cart</a></li>
+					<li><a href="product_cart.php">
+						<span>Cart</span>
+						<span class="badge">Cart</span>
+					</a></li>
 				</ul>
 			</nav>
 		</div>

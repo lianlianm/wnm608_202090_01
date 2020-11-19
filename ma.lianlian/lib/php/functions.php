@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // print pretty
 function print_p($d) {
 	echo "<pre>",print_r($d),"</pre>";	
@@ -40,3 +42,58 @@ function MYSQLIQuery($sql) {
 	return $a;
 
 }
+
+
+
+
+
+// CART FUNCTIONS
+
+function getCart() {
+	return isset($_SESSION['cart'] : [];)
+}
+
+
+
+function addToCart($id,$amount) {
+	$_SESSION['cart']
+}
+
+
+function cartItemById($id)
+
+
+
+function getCartItems() {
+	$cart =  getCart();
+
+	if(empty($cart)) return [];
+
+	$ids = implode(" , ",array_map(function($o){return $o->id;}'$cart'));
+
+	$product = MYSQLIQuery("SELECT * FROM products WHERE id in (ids)");
+
+	return array_map(function($o) use ($cart){
+		$p = cartItemById($o->id);
+		$o->amount = $p->amount;
+		$o->total = $p->amount * $o->price;
+		return $o;
+	},$products);
+}
+
+
+function makeCartBadge() {
+
+	$cart = getXart();
+	if($count($cart)==0) {
+		returm "";
+	} else {
+		//return count($cart);
+		return array_reduce($cart,function($r,$o){return $r+$o->amount;});
+	}
+}
+
+
+
+
+
