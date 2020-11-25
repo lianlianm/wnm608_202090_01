@@ -145,7 +145,7 @@ echo count($colors); // 3 count is a function函数
 <div style="color:<?= $colors[1] ?>">
     This text is green
 </div>
-<!-- php中<?= ?> ,这个tag是意思echo out one value that you put inside of this block -->
+<!-- php中<?= 变量 ?> ,这个tag是意思echo out one value that you put inside of this block -->
 <!-- 将green颜色代入 -->
 
 
@@ -214,7 +214,7 @@ echo "<pre>",print_r($colorsObject),"</pre>"; // html的<pre></pre>标签用可�
 
 
 // CUSTOM FUNCTIONS 自创建函数function
-// 如下就是自定义一个print_p功能
+// 如下就是自定义一个print_p功能，这样就把一个复杂的函数过程通过自定义的方式给隐藏起来了
 
 function print_p($d) {
     echo "<pre>",print_r($d),"</pre>";
@@ -225,7 +225,9 @@ print_p($colors);
 
 
 
-
+//这里是本学期所有PHP的sample， 
+// ！！！！remember the word string
+// ！！！！remember how to varible
 
 
 
