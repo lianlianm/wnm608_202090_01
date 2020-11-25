@@ -50,7 +50,7 @@ function MYSQLIQuery($sql) {
 // CART FUNCTIONS
 
 function getCart() {
-	return isset($_SESSION['cart'] : [];)
+	return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 }
 
 

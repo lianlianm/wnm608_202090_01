@@ -1,10 +1,16 @@
 {
     "notes":[
-    	"JSON files always start with either and array [] or and object {}",
+    	"JSON files always start with either an array [] or and object {}",
+    	// 数组是[] 对象是{}
+    	
     	"JSON files cannot have comments, so put any comments in this array",
-    	"Commas go between items in an array or object, but there should never be a trailing comma",
+    	"Commas go between items in an array or object, but there should never be a trailing comma", 
+    	//每个item之间用逗号，但最后一个item后面不要逗号
+    	
     	"All property name must be in quotation marks",
     	"All string quotation marks must be double quotes",
+    	//必须是双引号
+
     	"Use a linter like jsonlint.com to check json ",
     ]	
-}
+} 

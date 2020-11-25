@@ -1,3 +1,4 @@
+<hr>
 <footer>
-	<h1>right @ Lianlian</h1>
+    Copyright © Lian. All Rights Reserved
 </footer>

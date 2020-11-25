@@ -78,5 +78,11 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
          </div>
    </div>
 
+
+
+
+
+    <?php include "parts/footer.php" ?>   
+
 </body>
 </html>

@@ -17,6 +17,9 @@
             <p>We make a thing.</p>
         </div>
     </div>
+
+
+     <?php include "parts/footer.php" ?>   
     
 </body>
 </html>

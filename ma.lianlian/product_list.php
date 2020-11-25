@@ -35,5 +35,9 @@ include_once "parts/templates.php";
          </div>
    </div>
 
+
+
+    <?php include "parts/footer.php" ?>   
+
 </body>
 </html>

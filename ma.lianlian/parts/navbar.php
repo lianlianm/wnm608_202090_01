@@ -1,7 +1,8 @@
 <header class="navbar">
-    <div class="grid display-flex flex-align-center">
+    <div class="container grid display-flex flex-align-center">
         <div class="col-xs-12 col-md-3" style="margin:auto">
-            <img src="img/logo001.png" class="logo">
+           <!--  <img src="img/logo001.png" class="logo"> -->
+           <h1><a href="index.php">HUI.徽</a></h1>
         </div>
         <div class="col-xs-12 col-md-3">
             <!-- <ul> 
@@ -16,7 +17,7 @@
                 <li><a href="product_list.php" class="heading-bold">Products</a></li>
                 <li><a href="product_cart.php" class="heading-bold">
 					    <span>Cart</span>
-					    <span class="badge">Cart</span>
+					    <span class="badge"><?= makeCartBadge() ?></span>
 				    </a>
 			    </li>
             </ul>

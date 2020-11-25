@@ -15,8 +15,10 @@ include_once "lib/php/functions.php";
     <?php include "parts/navbar.php" ?>
     <!-- 将navbar的code单独放在一个navbar.php文件中，然后引入每个page，则只需修改源navbar.php文件，就可以自动修改每个page的导航栏 -->
 
-    <div class="view-window" style="background-image:url(img/xiaomi002.jpg)">
-        <h2>Product Name</h2>
+    <div class="view-window display-block" style="background-image:url(img/background001.jpg) ">
+        <div class="slogan heading-bold">
+            HUI <br> A CULTURAL AND MINIMALISM HOME 
+        </div>
     </div>
 
 
@@ -26,7 +28,8 @@ include_once "lib/php/functions.php";
         </div>
     </div>
 
-    
+
+    <?php include "parts/footer.php" ?>   
 </body>
 </html>
 
