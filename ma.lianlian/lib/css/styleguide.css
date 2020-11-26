@@ -308,7 +308,7 @@ code {
 
 
 /*  Hotdog  */
-
+.hotdog.stack,
 .hotdog {
     /*display:inline-block;*/
     display:inline-flex;
@@ -327,15 +327,37 @@ code {
     color: var(--color-neutral-light);
 }
 
-.hotdog input {
-    background-color: transparent;
-    border-width: 0;
-    flex: 1 1 100%;
-    outline: 0;
-    font: inherit;
-  /*padding:0 1em; 可以添加hotdog之间的距离*/
-}
-/*flex: 1 1 100%;实际上显示效果是stretch*/
+
+.hotdog.stack input,
+    .hotdog input {
+        background-color: transparent;
+        border-width: 0;
+        flex: 1 1 100%;
+        outline: 0;
+        font: inherit;
+      /*padding:0 1em; 可以添加hotdog之间的距离*/
+    }
+    /*flex: 1 1 100%;实际上显示效果是stretch*/
+
+    .hotdog.stack {
+        padding:0;
+    }
+    .hotdog.stack input {
+        padding:0.5em 1.5em;
+    }
+    .hotdog.stack button {
+        background-color: white;
+        padding:0.5em 1.5em;
+    }
+    .hotdog.stack >:last-child {
+        border-radius: 0.2em 0 2em;
+    }
+    .hotdog.stack >:first-child {
+
+    }
+
+
+
 
 .icon {
     display: inline-block;

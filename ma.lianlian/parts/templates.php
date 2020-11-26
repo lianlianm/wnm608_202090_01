@@ -6,7 +6,7 @@ return $r.<<<HTML
    <a href="product_item.php?id=$o->id" class="product-item">
       <figure>
          <div class="product-image">
-            <img src="/images/store/$o->image_thumb" alt="">
+            <img src="/img/products/$o->image_thumb" alt="">
          </div>
          <figcaption class="product-description">
             <div class="product-price">&dollar;$o->price</div>
@@ -20,8 +20,10 @@ HTML;
 
 
 function selectAmount($amount=1,$total=10) {
-   $output = "<select name='amount'>";
-   for($)
+   $output = "<select name='product-amount'>";
+   for($i=1;$i<=$total;$i++) {
+      $output .= "<option ".()
+   }
 }
 
 
