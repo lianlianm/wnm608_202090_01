@@ -19,10 +19,10 @@ $empty_user = (object)[
 
 switch(@$_GET['crud']){
 	case 'update':
-	    $user[$_GET['id']]->name = $_POST['user_name'];
-	    $user[$_GET['id']]->type = $_POST['user_type'];
-	    $user[$_GET['id']]->email = $_POST['user_email'];
-	    $user[$_GET['id']]->classes = explode(", ",$_POST['user_classes']);
+	    $users[$_GET['id']]->name = $_POST['user-name'];
+	    $users[$_GET['id']]->type = $_POST['user-type'];
+	    $users[$_GET['id']]->email = $_POST['user-email'];
+	    $users[$_GET['id']]->classes = explode(", ",$_POST['user-classes']);
     
 	    file_put_contents($filename,json_encode($users));
     
@@ -31,10 +31,10 @@ switch(@$_GET['crud']){
 
 
 	case 'create':
-	    $empty_user->name = $_POST['user_name']; 
-	    $empty_user->type = $_POST['user_type']; 
-	    $empty_user->email = $_POST['user_email']; 
-	    $empty_user->classes = explode(", ",$_POST['user_classes']);
+	    $empty_user->name = $_POST['user-name']; 
+	    $empty_user->type = $_POST['user-type']; 
+	    $empty_user->email = $_POST['user-email']; 
+	    $empty_user->classes = explode(", ",$_POST['user-classes']);
     
 	    $id = count($users);
     
@@ -69,8 +69,8 @@ $userdata = $id=='new' ? '' : <<<HTML
     <div class="display-flex">
         <h2 class="flex-stretch">$user->name</h2>
         <div>
-            <a href="{$_SERVER['PHP_SELF']}?id&crud=delete">
-                <imag src="img/icons/trash.svg" clsss="icon">
+            <a href="{$_SERVER['PHP_SELF']}?id=$id&crud=delete">
+                <img src="img/icons/trash.svg" class="icon">
             </a>           
         </div>
     <div>
@@ -116,11 +116,11 @@ echo <<<HTML
                     <input id="user-email" name="user-email" type="text" placeholder="Type user email" class="form-input" value="$user->email">
                 </div>
                 <div class="form-control">
-                    <label for="user-classes" class="form-label">classes</label>
+                    <label for="user-classes" class="form-label">Classes</label>
                     <input id="user-classes" name="user-classes" type="text" placeholder="Type user classes" class="form-input" value="classes">
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-buttom" value="Save">
+                    <input type="submit" class="form-button" value="Save">
                 </div>
             </form>
         </div>
@@ -160,7 +160,14 @@ HTML;
 
 
 	<div class="container">
+
 		<?php
+
+        // ternary or conditional三元或条件
+        // 三元运算符：简写是：(条件) ? (值1):(值2); 代码翻译就是下面的这串if else
+        // 解释：如果条件成立（为真），则执行冒号前边的“值1”，否则执行冒号后面的“值2”
+        // isset（）函数是检测变量是否设置，$_GET['id']是通过get方法传过来的值
+        
 		if(isset($_GET['id'])) {
 			showUserPage(
 				$_GET['id']=='new' ?
@@ -168,16 +175,20 @@ HTML;
 				    $users[$_GET['id']]
 				    );
 		} else {
+
 		?>
 		<div class="card soft">
 		<h2>User List</h2>
+
 		<ul>
 		<?php
+
 		for($i=0; $i<count($users); $i++) {
 			echo "<li>
 			<a href='{$_SERVER['PHP_SELF']}?id=$i'>{$users[$i]->name}</a>
 			</li>";
 		}
+		
 		?>
 		</ul>
 		</div>
