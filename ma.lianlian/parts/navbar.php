@@ -13,8 +13,8 @@
         <nav class="nav pills col-xs-12 col-md-6">
             <ul> 
                 <li><a href="index.php" class="heading-bold">Home</a></li>
-                <li><a href="about.php" class="heading-bold">About</a></li>
                 <li><a href="product_list.php" class="heading-bold">Products</a></li>
+                <li><a href="about.php" class="heading-bold">About</a></li>
                 <li><a href="product_cart.php" class="heading-bold">
 					    <span>Cart</span>
 					    <span class="badge"><?= makeCartBadge() ?></span>

@@ -2,12 +2,15 @@
 	--color-neutral-light:#F2F2F2;  /*已改*/
 	--color-neutral-medium:#707070;  /*已改*/
 	--color-neutral-dark:#353535;  /*已改*/
+
 	--color-main-light:#d7e8fa9c; /*已改*/
 	--color-main-medium:#2A6AA3; /*已改*/
 	--color-main-dark:#08435c;
+
 	--color-alt-light: #ffdecf; /*已改 粉色*/
 	--color-alt-medium:#07aff5;
 	--color-alt-dark:#27055c;
+
 	--color-warning:#CB8B12;  /*已改*/
 	--color-error:#d90c63;
 	--color-purchase:#C92811; /*已改*/
@@ -16,7 +19,10 @@
 body {
 	font-family:Roboto, Arial,sans-serif;
 	font-weight:400;
+	/*background-color:#f9f9f9;*/
+    /*padding-bottom:10em;*/
 }
+
 .body-text-thin {
 	font-family:Roboto, sans-serif;
 	font-weight:100;
@@ -42,9 +48,6 @@ body {
 	font-weight:500;
 }
 
-.well {
-	background-color: var(--color-main-light);
-}
 
 /*
 .body {
@@ -53,9 +56,11 @@ body {
 }*/
 
 
+
 .navbar {
     background-color: var(--color-neutral-light);
     color:var(--color-neutral-dark);
+    margin-bottom: 1em;
 }
 
 
@@ -63,6 +68,12 @@ body {
 	max-width: 120px;
 }
 
+
+
+
+.well {
+	background-color: var(--color-main-light);
+}
 
 .view-window .slogan {
 	position: absolute;
@@ -78,10 +89,12 @@ body {
     line-height: 100%;
     transition: all 0.3s;
 }
-
 .slogan:hover {
 	box-shadow: 1px 1px 12px rgba(0,0,0,0.4);
 }
+
+
+
 
 .btn.sell {
        color:var(--color-white);
@@ -197,9 +210,17 @@ footer {
 
 
 /*module 03*/
+[class*='col-']>.card {
+  height:100%;
+  margin:0;
+}
+
 [class*='col-']>.well {
 	height:100%;
 }
+
+
+
 
 /* Product List Design */
 .product-item {
@@ -208,15 +229,47 @@ footer {
 	border-radius: 0.2em;
 	background-color: white;
 	box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-	/*padding:1em;*/
+	padding:1em;
 	transition: all 0.3s;
 	display:block;
 	height:100%;
 }
-.product
+
+
+a.product-item:hover {
+	text-decoration: none;
+	transform: scale(1.01);
+}
+
+a:hover .product-item {
+   text-decoration:none !important;
+}
+
+.product-item figure {
+	margin:0;
+}
 
 .product-item:hover {
 	box-shadow: 1px 1px 12px rgba(0,0,0,0.4);
+}
+
+
+.product-price {
+	font-size: 1.2em;
+	padding: 0.2em 0.4em;
+	color: var(--color-main-medium);
+}
+.product-title {
+	font-size: 0.9em;
+	padding: 0.2em 0.4em;
+}
+.product-description {
+	height:5rem;
+}
+
+
+.product-image img{
+	width: 100%;
 }
 
 .product-image {
@@ -225,6 +278,13 @@ footer {
 	overflow:hidden;
 	padding-bottom:100%; 
 	/*可以修改padding-bottom数值来修改图片框架大小*/
+}
+
+.imge-main {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 60%;
 }
 
 .image-main img,
@@ -245,24 +305,17 @@ footer {
 }
 
 
-.product-description {
-	height:5rem;
-}
-.product-price {
-	font-size: 1.2em;
-	padding: 0.2em 0.4em;
-	color: var(--color-main-medium);
-}
-.product-title {
-	font-size: 0.9em;
-	padding: 0.2em 0.4em;
+.card :first-child,
+.card-section :first-child {
+  margin-top:0;
 }
 
 
-span.badge::after {
+
+span.badge:not(:empty)::after {
 	content:')';
 }
-span.badge::before {
+span.badge:not(:empty)::before {
 	content:'(';
 }
 

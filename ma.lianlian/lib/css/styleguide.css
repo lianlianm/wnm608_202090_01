@@ -2,7 +2,8 @@
 
 *, *::before, *::after {
 	box-sizing:border-box;
-}
+} 
+/* ？什么意思： *, *::before, *::after*/
 
 
 :root {
@@ -74,7 +75,7 @@ code {
 
 .flex-align-center { align-items: center; }
 .flex-justify-center {justify-content: center; } 
-.flex-justify-space-around {justify-content: space-around; } 
+/*.flex-justify-space-around {justify-content: space-around; } */
 
 
 
@@ -147,6 +148,7 @@ code {
 	background-size:cover;
 	background-position:center;
 	background-attachment:fixed;
+
 	height:70vh;
 }
 /*70vh就是70%view height */
@@ -270,7 +272,7 @@ code {
 /* Buttons */
 
 /*所有card的样式设计方法，都可以用在button上，去设计属于自己不同的button*/
-/*也可以早button上面添加label，以便于解释这个button的用途*/
+/*也可以在button上面添加label，以便于解释这个button的用途*/
 
 .btn,
 .form-button {
@@ -287,6 +289,8 @@ code {
     outline: 0;
     -webkit-appearance: none;
 }
+ /*通常我们可以在相应的元素上加上-webkit-appearance: none;来移除原生控件样式。*/
+
  /*btn和form-button是一样的东西，换了个short name*/
 
 .btn:hover,
@@ -294,6 +298,7 @@ code {
     text-decoration: none;
 
 }
+    .form-button.inline,
     .btn.inline {
         width: initial;
     }
@@ -311,8 +316,9 @@ code {
 .hotdog.stack,
 .hotdog {
     /*display:inline-block;*/
-    display:inline-flex;
-    width:100%;
+    /*line-height: 3rem;*/
+    display: inline-flex;
+    width: 100%;
     font: inherit;
     background-color: var(--color-neutral-light);
     padding: 0.5em 1.5em;
@@ -328,8 +334,9 @@ code {
 }
 
 
+.hotdog.stack button,
 .hotdog.stack input,
-    .hotdog input {
+.hotdog input {
         background-color: transparent;
         border-width: 0;
         flex: 1 1 100%;
@@ -339,6 +346,7 @@ code {
     }
     /*flex: 1 1 100%;实际上显示效果是stretch*/
 
+
     .hotdog.stack {
         padding:0;
     }
@@ -347,24 +355,19 @@ code {
     }
     .hotdog.stack button {
         background-color: white;
-        padding:0.5em 1.5em;
+        padding: 0.5em 1.5em;
+        flex: none;
     }
     .hotdog.stack >:last-child {
-        border-radius: 0.2em 0 2em;
+        border-radius: 0 2em 2em 0;
     }
     .hotdog.stack >:first-child {
-
+        border-radius: 2em 0 0 2em;
     }
 
 
 
 
-.icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: text-bottom;
-}
 
 
 /*   Select   */
@@ -398,6 +401,19 @@ code {
     pointer-events: none;
     color: var(--color-neutral-medium);
 }
+
+
+
+
+.icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: text-bottom;
+}
+
+
+
 
 /*  Toggle   */
 .toggle label {
