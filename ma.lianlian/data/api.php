@@ -2,8 +2,6 @@
 <!-- search, sort, filter功能的创建 --> 
 
 
-
-
 <!-- search -->
 <?php 
 
@@ -22,14 +20,14 @@ function makeStatement($type) {
 		case "products_all":
 		    return MYSQLIQuery("SELECT * 
 		    	FROM 'products' 
-		    	ORDER BY 'date_create' DESC
+		    	ORDER BY {$_GET['orderby']} {$_GET['orderby_direction']}
 		    	LIMIT {$_GET['limit']}");
 			break;
 
 
         case "product_by_id":
         if(!getRequires(['id'])) return
-        ["error"=>"Missing Properties"];
+            ["error"=>"Missing Properties"];
 
         	return MYSQLIQuery("SELECT * 
         		FROM 'products' 
@@ -37,8 +35,7 @@ function makeStatement($type) {
             break;
 
 
-
-        case "product_by_category":
+        case "products_by_category":
         if(!getRequires(['category'])) return
         ["error"=>"Missing Properties"];
 
@@ -67,10 +64,9 @@ function makeStatement($type) {
         	return MYSQLIQuery("SELECT * 
         		FROM 'products' 
         		WHERE 'price' < '{$_GET['price']}'
-        	    ORDER BY 'price' DESC
+        	    ORDER BY 'price' ASC
         	    LIMIT {$_GET['limit']}");
             break;
-
 
         case "search":
         if(!getRequires(['s'])) return
@@ -79,7 +75,7 @@ function makeStatement($type) {
         	return MYSQLIQuery("SELECT * 
         		FROM 'products' 
         		WHERE 'title' LIKE '%{$_GET['s']}%'
-        	    ORDER BY {$_GET['orderby']} DESC
+        	    ORDER BY {$_GET['orderby']} {$_GET['orderby_direction']}
         	    LIMIT {$_GET['limit']}");
             break;
             // like意思是模糊查询，比如输入appl就可以检索出apple这个物品
@@ -98,8 +94,7 @@ function makeStatement($type) {
 // 	echo json_encode(
 // 		makeStatement($_GET['t']),
 // 		JSON_UNESCAPED_UNICODE /
-// 		JSON_NUMBER_
-
+// 		JSON_NUMBER_CHECK
 // 	);
 // }
 

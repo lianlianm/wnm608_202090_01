@@ -22,13 +22,21 @@ $cart_product = cartItemById($_GET['id']);
 
          <p>There are now <?= $cart_product->amount ?> of <?= $product->title ?> in your cart.</p>
 
-         <a href="product_list.php">Back to shopping</a>
+         <div class="display-flex">
+            <div class="flex-none">
+               <a href="product_list.php" class="form-button">Back to shopping</a>
+            </div>
+            <div class="flex-stretch"></div>
+            <div class="flex-none">
+               <a href="product_cart.php" class="form-button">Check Cart</a>
+            </div>
+         </div>
+
+        
       </div>
    </div>
 
-
-
-    <?php include "parts/footer.php" ?>   
+   <?php include "parts/footer.php" ?>   
 
 </body>
 </html>

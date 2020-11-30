@@ -118,7 +118,7 @@ function getCartItems() {
 
 function makeCartBadge() {
 	$cart = getCart();
-	if($count($cart)==0) {
+	if(count($cart)==0) {
 		return "";
 	} else {
 		//return count($cart);
