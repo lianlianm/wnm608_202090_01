@@ -39,7 +39,8 @@ function makeStatement($type) {
         if(!getRequires(['category'])) return
         ["error"=>"Missing Properties"];
 
-        	return MYSQLIQuery("SELECT * 
+        	return MYSQLIQuery("
+                SELECT * 
         		FROM 'products' 
         		WHERE 'category' = '{$_GET['category']}'
         	    LIMIT {$_GET['limit']}");

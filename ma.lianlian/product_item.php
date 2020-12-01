@@ -8,7 +8,7 @@ $product = MYSQLIQuery("SELECT * FROM products WHERE id = {$_GET['id']}")[0];
 $thumbs = explode(",",$product->image_other);
 
 $thumbs_elements = array_reduce($thumbs,function($r,$o){
-   return $r."<img src='/images/store/$o'>";
+   return $r."<img src='img/products/$o'>";
 
 
 
@@ -38,7 +38,7 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
          <div class="col-xs-12 col-md-7">
             <div class="card soft">
                <div class="image-main">
-                  <img src="/images/store/<?= $product->image_thumb ?>" alt="">
+                  <img src="img/products/<?= $product->image_thumb ?>" alt="">
                </div>
                <div class="image-thumbs">
                   <?= $thumbs_elements ?>

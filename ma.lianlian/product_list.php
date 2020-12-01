@@ -1,4 +1,5 @@
 <?php
+
 include_once "lib/php/functions.php";
 include_once "parts/templates.php";
 include_once "data/api.php";
@@ -40,9 +41,28 @@ function makeHiddenValues($arr1,$arr2) {
 
 
 $result = makeStatement($_GET['t']);
-$product = isset($result['error']) ? [] : $result;
+$products = isset($result['error']) ? [] : $result;
 
 
+
+
+// 之前的function makeProductlist($r,$o) {
+//     echo $r.<<<HTML
+//     <div class="col-xs-12 col-md-4">
+//     <a href="#" class="product-item">
+//         <figure>
+//            <div class="product-image">
+//               <img src="img/products/$o->thumbnail" alt="">
+//            </div>
+//            <figcaption class="product-description">
+//               <div class="product-price">&dollar;$o->price</div>
+//               <div class="product-title">$o->title</div>
+//            </figcaption>
+//         </figure>
+//     </a>
+// </div>
+// HTML;
+// }
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -126,12 +146,32 @@ $product = isset($result['error']) ? [] : $result;
 
       <div class="grid gap">
            
-         <?php
+          <?php
          echo array_reduce(
-            $products,
-            'makeProductList'
-         );
+         $products,
+         'makeProductList'
+          );
          ?>
+
+
+         <!-- <?php 
+                // $conn = makeConn();
+                // $result = @$conn->query("SELECT * FROM products");
+                // if($conn->errno) die($conn->error);
+                // while($row = $result->fetch_object()) {
+                //     echo "<li>$row->title</li>";
+                // }
+                // $arr = MYSQLIQuery("SELECT * FROM products");
+                // print_p($arr);
+                // echo array_reduce(
+                //      MYSQLIQuery("SELECT * FROM products"),
+                //      function($r,$o) {
+                //         return $r."<li>
+                //         <a href='product_item.php?id=$o->id'>$o->title - &dollar;$o->price</a>
+                //         </li>";
+                //      }
+                // );
+                 ?> -->
       </div>
    </div>
 

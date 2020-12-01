@@ -7,7 +7,7 @@ return $r.<<<HTML
    <a href="product_item.php?id=$o->id" class="product-item">
       <figure>
          <div class="product-image">
-            <img src="/img/products/$o->image_thumb" alt="">
+            <img src="img/products/$o->image_thumb" alt="">
          </div>
          <figcaption class="product-description">
             <div class="product-price">&dollar;$o->price</div>
@@ -18,6 +18,7 @@ return $r.<<<HTML
 </div>
 HTML;
 }
+//调出在database中的所有产品，$r是reducing value,$o是current object.
 
 
 function selectAmount($amount=1,$total=10) {
@@ -38,7 +39,7 @@ $selectAmount = selectAmount($o->amount,10);
 return $r.<<<HTML
 <div class="display-flex">
    <div class="flex-none image-thumbs">
-      <img src="/images/store/$o->image_thumb">
+      <img src="img/products/$o->image_thumb">
    </div>
    <div class="flex-stretch">
       <strong>$o->title</strong>

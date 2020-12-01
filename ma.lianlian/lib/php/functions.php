@@ -114,7 +114,7 @@ function getCartItems() {
 		return $o;
 	},$products);
 }
-
+//$o是current object,$r是reducing value
 
 function makeCartBadge() {
 	$cart = getCart();
