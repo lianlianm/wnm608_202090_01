@@ -69,7 +69,7 @@ function resetCart() {
 }
 
 function cartItemById($id) {
-	return arrat_find(getCart(),function($o)use($id){ 
+	return array_find(getCart(),function($o)use($id){ 
 		return $o->id==$id;
 	});
 }

@@ -19,7 +19,7 @@ const checkSort = el => {
 	console.log(selected)
 
 	let orderby = selected.dataset.orderby;
-	let orderby_direction = selectd.dataset.direction;
+	let orderby_direction = selected.dataset.direction;
 
 	form.orderby.value = orderby;
 	form.orderby_direction.value = orderby_direction;

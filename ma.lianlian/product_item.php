@@ -11,8 +11,6 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
    return $r."<img src='img/products/$o'>";
 
 
-
-   //src='/images/store/$o'是什么地址？？？？？？//
 });
 
 
@@ -38,7 +36,7 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
          <div class="col-xs-12 col-md-7">
             <div class="card soft">
                <div class="image-main">
-                  <img src="img/products/<?= $product->image_thumb ?>" alt="">
+                  <img src="img/products/<?= $product->image_main ?>" alt="">
                </div>
                <div class="image-thumbs">
                   <?= $thumbs_elements ?>
@@ -107,15 +105,7 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
            
             <?php
 
-            echo array_reduce(
-               MYSQLIQuery("
-                  SELECT *
-                  FROM products
-                  WHERE id in (4,6,8)
-               "),
-               'makeProductList'
-            );
-
+            recommendSlimiar($product->category,$product->id);
             ?>
          </div>
    </div>

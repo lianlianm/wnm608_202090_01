@@ -19,10 +19,12 @@ function makeStatement($type) {
 	switch ($type) {
 		case "products_all":
 		    return MYSQLIQuery("SELECT * 
-		    	FROM 'products' 
+		    	FROM `products`
 		    	ORDER BY {$_GET['orderby']} {$_GET['orderby_direction']}
 		    	LIMIT {$_GET['limit']}");
 			break;
+//在这里的所有类似 FROM `products`，中的products这样不是value而是name的字符，都要用反引号``（在tab键上面）， 而不是单引号‘’
+//在MySQL中，为了区分MySQL的关键字与普通字符，MySQL引入了一个反引号
 
 
         case "product_by_id":
@@ -30,8 +32,8 @@ function makeStatement($type) {
             ["error"=>"Missing Properties"];
 
         	return MYSQLIQuery("SELECT * 
-        		FROM 'products' 
-        		WHERE 'id' = ".$_GET['id']);
+        		FROM `products` 
+        		WHERE `id` = ".$_GET['id']);
             break;
 
 
@@ -41,8 +43,8 @@ function makeStatement($type) {
 
         	return MYSQLIQuery("
                 SELECT * 
-        		FROM 'products' 
-        		WHERE 'category' = '{$_GET['category']}'
+        		FROM `products` 
+        		WHERE `category` = '{$_GET['category']}'
         	    LIMIT {$_GET['limit']}");
             break;
 
@@ -52,9 +54,9 @@ function makeStatement($type) {
         ["error"=>"Missing Properties"];
 
         	return MYSQLIQuery("SELECT * 
-        		FROM 'products' 
-        		WHERE 'price' > '{$_GET['price']}'
-        		ORDER BY 'price' DESC
+        		FROM `products` 
+        		WHERE `price` > '{$_GET['price']}'
+        		ORDER BY `price` DESC
         	    LIMIT {$_GET['limit']}");
             break;
 
@@ -63,9 +65,9 @@ function makeStatement($type) {
         ["error"=>"Missing Properties"];
 
         	return MYSQLIQuery("SELECT * 
-        		FROM 'products' 
-        		WHERE 'price' < '{$_GET['price']}'
-        	    ORDER BY 'price' ASC
+        		FROM `products` 
+        		WHERE `price` < '{$_GET['price']}'
+        	    ORDER BY `price` ASC
         	    LIMIT {$_GET['limit']}");
             break;
 
@@ -74,8 +76,8 @@ function makeStatement($type) {
         ["error"=>"Missing Properties"];
 
         	return MYSQLIQuery("SELECT * 
-        		FROM 'products' 
-        		WHERE 'title' LIKE '%{$_GET['s']}%'
+        		FROM `products` 
+        		WHERE `title` LIKE '%{$_GET['s']}%'
         	    ORDER BY {$_GET['orderby']} {$_GET['orderby_direction']}
         	    LIMIT {$_GET['limit']}");
             break;

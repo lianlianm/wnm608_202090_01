@@ -7,7 +7,7 @@ return $r.<<<HTML
    <a href="product_item.php?id=$o->id" class="product-item">
       <figure>
          <div class="product-image">
-            <img src="img/products/$o->image_thumb" alt="">
+            <img src="img/products/$o->image_main" alt="">
          </div>
          <figcaption class="product-description">
             <div class="product-price">&dollar;$o->price</div>
@@ -27,7 +27,7 @@ function selectAmount($amount=1,$total=10) {
       $output .= "<option ".($i==$amount?'selected':'').">$i</option>";
    }
    $output .= "</selected>";
-   return $output;
+   return $output; 
 }
 
 
@@ -35,11 +35,11 @@ function selectAmount($amount=1,$total=10) {
 
 function makeCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
-$selectAmount = selectAmount($o->amount,10);
+$selectamount = selectAmount($o->amount,10);
 return $r.<<<HTML
 <div class="display-flex">
    <div class="flex-none image-thumbs">
-      <img src="img/products/$o->image_thumb">
+      <img src="img/products/$o->image_main">
    </div>
    <div class="flex-stretch">
       <strong>$o->title</strong>
@@ -101,5 +101,47 @@ HTML;
 
 
 
+
+
+
+
+
+// function makeAdminList($r,$o) {
+//    return $r.<<<HTML
+// }
+
+
+// function makeRecommend($a) {
+//    $products = array_reduce($a,'makeProductList');
+//    echo <<<HTML
+//    <div class="grid gap productlist">$products</div>
+//    HTML;
+// }
+
+
+// function recommendSimilar($cat,$id=0,$limit=3) {
+//    $result = MYSQLIQuery("
+//          SELECT *
+//          FROM products
+//          Where
+//             `category`='$cat' AND 
+//             `id` <> $id
+//          ORDER BY rand()
+//          LIMIT $limit
+//          ");
+//    makeRecommend($result);
+// }
+
+// function recommendCategory($cat,$limit=3) {
+//    $result = MYSQLIQuery("
+//          SELECT *
+//          FROM products
+//          Where
+//             `category`='$cat' 
+//          ORDER BY `date_create` DESC
+//          LIMIT $limit
+//          ");
+//    makeRecommend($result);
+// }
 
 

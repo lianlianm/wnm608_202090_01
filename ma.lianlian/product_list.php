@@ -10,7 +10,7 @@ setDefault('s','');
 setDefault('t','products_all');
 setDefault('orderby_direction','DESC');
 setDefault('orderby','date_create');
-setDefault('limit','12');
+setDefault('limit','15');
 
 
 function makeSortOptions() {
@@ -18,7 +18,7 @@ function makeSortOptions() {
       ["date_create","DESC","Latest Products"],
       ["date_create","ASC","Oldest Products"],
       ["price","DESC","Most Expensive"],
-      ["price","ASC","Lest Expensive"]
+      ["price","ASC","Least Expensive"]
    ];
    //DESC是descend降序, ASC是ascend升序//
 
