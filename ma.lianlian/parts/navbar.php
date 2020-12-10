@@ -1,6 +1,6 @@
 
 <header class="navbar">
-    <div class="grid display-flex flex-align-center">
+    <div class="container grid display-flex flex-align-center">
         <div class="col-xs-12 col-md-3" style="margin:auto">
             <a href="index.php"><img src="img/logo001.png" class="logo"></a>
         </div>
@@ -11,7 +11,7 @@
         <nav class="nav pills col-xs-12 col-md-6" style="margin:auto">
             <ul> 
                 <li><a href="index.php" class="heading-bold">Home</a></li>
-                <li><a href="product_list.php" class="heading-bold">Products</a></li>
+                <li><a href="product_list.php" class="heading-bold">Shop</a></li>
                 <li><a href="about.php" class="heading-bold">About</a></li>
                 <li><a href="product_cart.php" class="heading-bold">
                         <span>Cart</span>

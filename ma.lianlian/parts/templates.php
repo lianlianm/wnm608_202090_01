@@ -26,7 +26,7 @@ function selectAmount($amount=1,$total=10) {
    for($i=1;$i<=$total;$i++) {
       $output .= "<option ".($i==$amount?'selected':'').">$i</option>";
    }
-   $output .= "</selected>";
+   $output .= "</select>";
    return $output; 
 }
 
@@ -35,7 +35,7 @@ function selectAmount($amount=1,$total=10) {
 
 function makeCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
-$selectamount = selectAmount($o->amount,10);
+$selectamount = selectAmount($o->amount,20);
 return $r.<<<HTML
 <div class="display-flex">
    <div class="flex-none image-thumbs">
@@ -68,7 +68,7 @@ function cartTotals() {
 
 $cart = getCartItems();
 
-$cartprice = array_reduce($cart,function($r,$o){return $r+$o->tota;},0);
+$cartprice = array_reduce($cart,function($r,$o){return $r+$o->total;},0);
 
 $pricefixed = number_format($cartprice,2,'.','');
 
@@ -102,46 +102,67 @@ HTML;
 
 
 
+function makeAdminList($r,$o) {
+return $r.<<<HTML
+<div class="display-flex card flat soft">
+   <div class="flex-none image-thumbs">
+      <img src="img/products/$o->image_main">
+   </div>
+   <div class="flex-stretch" style="padding:1em">
+      <div><strong>$o->title</strong></div>
+      <div>$o->category</div>
+   </div>
+   <div class="flex-none">
+      <div class="card-section"><a href="admin/?id=$o->id" class="form-button">Edit</a></div>
+      <div class="card-section"><a href="product_item.php?id=$o->id" class="form-button">View</a></div>
+   </div>
+</div>
+HTML;
+}
+
+function makeRecommend($a) {
+$products = array_reduce($a,'makeProductList');
+echo <<<HTML
+<div class="grid gap productlist">$products</div>
+HTML;
+}
 
 
 
+function recommendSimilar($cat,$id=0,$limit=3) {
+   $result = MYSQLIQuery("
+         SELECT *
+         FROM products
+         WHERE
+            `category`='$cat' AND
+            `id` <> $id
+         ORDER BY rand()
+         LIMIT $limit
+      ");
+   makeRecommend($result);
+}
 
-// function makeAdminList($r,$o) {
-//    return $r.<<<HTML
-// }
-
-
-// function makeRecommend($a) {
-//    $products = array_reduce($a,'makeProductList');
-//    echo <<<HTML
-//    <div class="grid gap productlist">$products</div>
-//    HTML;
-// }
-
-
-// function recommendSimilar($cat,$id=0,$limit=3) {
-//    $result = MYSQLIQuery("
-//          SELECT *
-//          FROM products
-//          Where
-//             `category`='$cat' AND 
-//             `id` <> $id
-//          ORDER BY rand()
-//          LIMIT $limit
-//          ");
-//    makeRecommend($result);
-// }
-
-// function recommendCategory($cat,$limit=3) {
-//    $result = MYSQLIQuery("
-//          SELECT *
-//          FROM products
-//          Where
-//             `category`='$cat' 
-//          ORDER BY `date_create` DESC
-//          LIMIT $limit
-//          ");
-//    makeRecommend($result);
-// }
+function recommendCategory($cat,$limit=3) {
+   $result = MYSQLIQuery("
+         SELECT *
+         FROM products
+         WHERE
+            `category`='$cat'
+         ORDER BY `date_create` DESC
+         LIMIT $limit
+      ");
+   makeRecommend($result);
+}
 
 
+// 以下是我自己参照写的新到产品推荐的function
+function recommendNew() {
+   $result = MYSQLIQuery("
+         SELECT *
+         FROM products
+         
+         ORDER BY `date_create` DESC
+         LIMIT 3
+      ");
+   makeRecommend($result);
+}

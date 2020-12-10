@@ -99,18 +99,13 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
       <div class="card soft medium">
          <p><?= $product->description ?></p>
       </div>
-         <h2>Related Products</h2>
-
-         <div class="grid gap">
+         <h2>YOU MAY ALSO LIKE</h2>
            
-            <?php
+         <?php
 
-            recommendSlimiar($product->category,$product->id);
-            ?>
-         </div>
+            recommendSimilar($product->category,$product->id);
+         ?>
    </div>
-
-
 
 
 

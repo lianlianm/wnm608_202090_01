@@ -60,7 +60,7 @@ function showUserPage ($user) {
 
 $id = $_GET['id'];
 $classes = implode(", ", $user->classes);
-$addoredit = $id=='new' ? 'And' : 'Edit';
+$addoredit = $id=='new' ? 'Add' : 'Edit';
 $createorupdate = $id=='new' ? 'create' : 'update';
 
 

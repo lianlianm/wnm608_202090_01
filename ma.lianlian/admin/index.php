@@ -4,90 +4,123 @@ include "../lib/php/functions.php";
 include "../parts/templates.php"; 
 include "../data/api.php"; 
 
-
 setDefault('orderby_direction','DESC');
 setDefault('orderby','date_create');
-setDefault('limit','15');
+setDefault('limit','12');
 $products = makeStatement("products_admin_all",[]);
-
-$empty_user = (object)[
-"name"=>"",
-"type"=>"",
-"email"=>"",
-"classes"=>[]
+ 
+$empty_product = (object)[
+"title"=>"Flowerpot1",
+"price"=>"12.99",
+"category"=>"hui",
+"description"=>"Huizhou architectural elements.",
+"quantity"=>"20",
+"image_other"=>"hui_flowerpot1_1.jpg,hui_flowerpot1_2.jpg,hui_flowerpot1_3.jpg",
+//注意此处多个图片文件名之间有无space，必须跟line78一致， 此处我的是无space
+"image_main"=>"hui_flowerpot1_main.jpg"
 ];
 
 
 switch(@$_GET['crud']){
 	case 'update':
-	    $users[$_GET['id']]->name = $_POST['user-name'];
-	    $users[$_GET['id']]->type = $_POST['user-type'];
-	    $users[$_GET['id']]->email = $_POST['user-email'];
-	    $users[$_GET['id']]->classes = explode(", ",$_POST['user-classes']);
-    
-	    file_put_contents($filename,json_encode($users));
+
+	    makeStatement("product_update",[
+	    	$_POST['product-title'],
+	    	$_POST['product-price'],
+	    	$_POST['product-category'],
+	    	$_POST['product-description'],
+	    	$_POST['product-quantity'],
+	    	$_POST['product-image_other'],
+	    	$_POST['product-image_main'],
+	    	$_GET['id'],
+	    ]);
+	      
     
 	    header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
 	    break;
 
 
 	case 'create':
-	    $empty_user->name = $_POST['user-name']; 
-	    $empty_user->type = $_POST['user-type']; 
-	    $empty_user->email = $_POST['user-email']; 
-	    $empty_user->classes = explode(", ",$_POST['user-classes']);
-    
-	    $id = count($users);
-    
-	    $users[] = $empty_user;
-    
-	    file_put_contents($filename,json_encode($users));
+
+        $id = makeStatement("product_insert",[
+            $_POST['product-title'],
+	    	$_POST['product-price'],
+	    	$_POST['product-category'],
+	    	$_POST['product-description'],
+	    	$_POST['product-quantity'],
+	    	$_POST['product-image_other'],
+	    	$_POST['product-image_main']
+        ]);
     
 	    header("location:{$_SERVER['PHP_SELF']}?id=$id");
 	    break;
 
 
 	case 'delete':
-	    array_splice($users,$_GET['id'],1);
-
-	    file_put_contents($filename,json_encode($users));
+	    makeStatement("product_delete",[
+	    	$_GET['id']
+	    ]);
 
 	    header("location:{$_SERVER['PHP_SELF']}");
 	    break;
 }
 
 
-function showUserPage ($user) {
+
+// 这就是admin页面中edit的页面
+function showProductPage($product) {
+
+	//print_p($product);
 
 $id = $_GET['id'];
-$classes = implode(", ", $user->classes);
-$addoredit = $id=='new' ? 'And' : 'Edit';
+
+$thumbs = explode(",", $product->image_other);
+//此处呼应line19 多个文件名之间是否有space，必须一致，此处我写的是无space
+
+
+$thumbs_elements = array_reduce($thumbs,function($r,$o){
+	return $r."<img src='img/products/$o'>";
+});
+
+
+$addoredit = $id=='new' ? 'Add' : 'Edit';
 $createorupdate = $id=='new' ? 'create' : 'update';
 
 
-$userdata = $id=='new' ? '' : <<<HTML
+$productdata = $id=='new' ? '' : <<<HTML
 <div class="card soft">
     <div class="display-flex">
-        <h2 class="flex-stretch">$user->name</h2>
+        <h2 class="flex-stretch">$product->title</h2>
         <div>
             <a href="{$_SERVER['PHP_SELF']}?id=$id&crud=delete">
                 <img src="img/icons/trash.svg" class="icon">
             </a>           
         </div>
+    </div>
     <div>
-		<strong>Type</strong>
-		<span>$user->type</span>
+		<strong>Category</strong>
+		<span>$product->category</span>
 	</div>
 	<div>
-		<strong>Email</strong>
-		<span>$user->email</span>
+		<strong>Price</strong>
+		<span>&dollar;$product->price</span>
 	</div>
 	<div>
-		<strong>Classes</strong>
-		<span>$classes</span>
+		<strong>Quantity</strong>
+		<span>$product->quantity</span>
+	</div>
+	<div>
+		<strong>Description</strong>
+		<span>$product->description</span>
+	</div>
+	<div>
+		<strong>Images</strong>
+		<div class="image-thumbs"><img src='img/products/$product->image_main'></div>
+		<div class="image-thumbs">$thumbs_elements</div>
 	</div>
 </div>
 HTML;
+
 
 
 echo <<<HTML
@@ -99,26 +132,38 @@ echo <<<HTML
 </nav>
 </div>
 <div class="grid gap">
-    <div class="col-xs-12 col-md-4">$userdata</div>
+    <div class="col-xs-12 col-md-4">$productdata</div>
     <div class="col-xs-12 col-md-8">
         <div class="card soft">
            <form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&crud=$createorupdate">
-                <h2>$addoredit User</h2>
+                <h2>$addoredit Product</h2>
                 <div class="form-control">
-                    <label for="user-name" class="form-label">Name</label>
-                    <input id="user-name" name="user-name" type="text" placeholder="Type user name" class="form-input" value="$user->name">
+                    <label for="product-title" class="form-label">Title</label>
+                    <input id="product-title" name="product-title" type="text" placeholder="Type product title" class="form-input" value="$product->title">
                 </div>
                 <div class="form-control">
-                    <label for="user-type" class="form-label">Type</label>
-                    <input id="user-type" name="user-type" type="text" placeholder="Type user type" class="form-input" value="$user->type">
+                    <label for="product-category" class="form-label">Category</label>
+                    <input id="product-category" name="product-category" type="text" placeholder="Type product category" class="form-input" value="$product->category">
                 </div>
                 <div class="form-control">
-                    <label for="user-email" class="form-label">Email</label>
-                    <input id="user-email" name="user-email" type="text" placeholder="Type user email" class="form-input" value="$user->email">
+                    <label for="product-price" class="form-label">Price</label>
+                    <input id="product-price" name="product-price" type="text" placeholder="Type product price" class="form-input" value="$product->price">
                 </div>
                 <div class="form-control">
-                    <label for="user-classes" class="form-label">Classes</label>
-                    <input id="user-classes" name="user-classes" type="text" placeholder="Type user classes" class="form-input" value="classes">
+                    <label for="product-quantity" class="form-label">Quantity</label>
+                    <input id="product-quantity" name="product-quantity" type="text" placeholder="Type product quantity" class="form-input" value="$product->quantity">
+                </div>
+                <div class="form-control">
+                    <label for="product-description" class="form-label">Description</label>
+                    <input id="product-description" name="product-description" type="text" placeholder="Type product description" class="form-input" value="$product->description">
+                </div>
+                <div class="form-control">
+                    <label for="product-image_main" class="form-label">Image Main</label>
+                    <input id="product-image_main" name="product-image_main" type="text" placeholder="Type product image_main" class="form-input" value="$product->image_main">
+                </div>
+                <div class="form-control">
+                    <label for="product-image_other" class="form-label">Image Others</label>
+                    <input id="product-image_other" name="product-image_other" type="text" placeholder="Type product image_other" class="form-input" value="$product->image_other">
                 </div>
                 <div class="form-control">
                     <input type="submit" class="form-button" value="Save">
@@ -137,27 +182,32 @@ HTML;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>User Administrator</title>
+	<title>Product Administrator</title>
 
 	<?php include "../parts/meta.php"; ?>
 </head>
 <body>
-	
+
 	<header class="navbar">
-		<div class="container display-flex">
-			<div class="flex-none">
-				<h1>Users Admin</h1>
-			</div>
-			<div class="flex-stretch"></div>
-			<!-- nav.nav.flex-none>ul>li>a[href=#]>{List} -->
-			<nav class="nav flex-none">
-				<ul>
-					<li><a href="<?= $_SERVER['PHP_SELF'] ?>">List</a></li>
-					<li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new">Add New User</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+        <div class="container grid display-flex flex-align-center">
+            <div class="col-xs-12 col-md-3" style="margin:auto">
+                <h1 class="heading-bold">Products Admin</h1>
+            </div>
+    
+            <div class="col-xs-12 col-md-3">
+            </div>
+    
+            <nav class="nav pills col-xs-12 col-md-6" style="margin:auto">
+                <ul> 
+                    <li><a href="product_list.php" class="heading-bold">Shop</a></li>
+                    <li><a href="<?= $_SERVER['PHP_SELF'] ?>" class="heading-bold">List</a></li>
+                    <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new" class="heading-bold">Add New Product</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> 
+	
+	
 
 
 	<div class="container">
@@ -170,29 +220,29 @@ HTML;
         // isset（）函数是检测变量是否设置，$_GET['id']是通过get方法传过来的值
         
 		if(isset($_GET['id'])) {
-			showUserPage(
+			showProductPage(
 				$_GET['id']=='new' ?
-				    $empty_user :
-				    $users[$_GET['id']]
-				    );
+				    $empty_product :
+				    array_find($products,function($o){
+				    	return $o->id==$_GET['id'];
+				    })
+			);
+
 		} else {
 
 		?>
-		<div class="card soft">
-		<h2>User List</h2>
+		<div class="card medium soft">
+		<h2>Product List</h2>
 
-		<ul>
-		<?php
-
-		for($i=0; $i<count($users); $i++) {
-			echo "<li>
-			<a href='{$_SERVER['PHP_SELF']}?id=$i'>{$users[$i]->name}</a>
-			</li>";
-		}
-		
-		?>
-		</ul>
-		</div>
+		    <div>
+    
+		    <?php
+    
+		    echo array_reduce($products,'makeAdminList');
+    
+		    ?>
+		    </div>
+	    </div>
 		
 		<?php } ?>
 	</div>

@@ -81,7 +81,7 @@ code {
 
 /* Component Classes */
 .nav ul {
-	list-style: none;
+	list-style-type: none;
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-left: 0;
@@ -131,11 +131,11 @@ code {
     color:var(--color-neutral-light);
     line-height:var(--header-height);
 }
-.navbar h1 {
+/*.navbar h1 {
 	font-size:1em;
 	font-family:Helvetica, Arial, sans-serif;
 	margin:0;
-}
+}*/
 .navbar a {
 	padding:0 0.5em;
     line-height: 1rem;

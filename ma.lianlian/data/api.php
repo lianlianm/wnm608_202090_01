@@ -14,7 +14,7 @@ function getRequires($props) {
 	return true;
 }
 
-function makeStatement($type) {
+function makeStatement($type,$params=[]) {
 
 	switch ($type) {
 		case "products_all":
@@ -23,8 +23,15 @@ function makeStatement($type) {
 		    	ORDER BY {$_GET['orderby']} {$_GET['orderby_direction']}
 		    	LIMIT {$_GET['limit']}");
 			break;
-//在这里的所有类似 FROM `products`，中的products这样不是value而是name的字符，都要用反引号``（在tab键上面）， 而不是单引号‘’
+//涉及到sql的code，在这里的所有类似 FROM `products`，中的products这样不是value而是名称的字符，都要用反引号``（在tab键上面）， 而不是单引号‘’
 //在MySQL中，为了区分MySQL的关键字与普通字符，MySQL引入了一个反引号
+
+
+        case "products_admin_all":
+            return MYSQLIQuery("SELECT * 
+                FROM `products`
+                ORDER BY date_create DESC");
+            break;
 
 
         case "product_by_id":
@@ -82,6 +89,61 @@ function makeStatement($type) {
         	    LIMIT {$_GET['limit']}");
             break;
             // like意思是模糊查询，比如输入appl就可以检索出apple这个物品
+        
+
+        case "product_insert":
+            return MYSQLIQuery("INSERT INTO
+                `products`
+                (
+                    `title`,
+                    `price`,
+                    `category`,
+                    `description`,
+                    `quantity`,
+                    `image_other`,
+                    `image_main`,
+                    `date_create`,
+                    `date_modify`
+                )
+                VALUES
+                (
+                    '{$params[0]}',
+                    '{$params[1]}',
+                    '{$params[2]}',
+                    '{$params[3]}',
+                    '{$params[4]}',
+                    '{$params[5]}',
+                    '{$params[6]}',
+                    NOW(),
+                    NOW()
+                )
+
+                ");
+            break;
+
+
+        case "product_update":
+            return MYSQLIQuery("UPDATE
+                `products`
+                SET
+                    `title` = '{$params[0]}',
+                    `price` = '{$params[1]}',
+                    `category` = '{$params[2]}',
+                    `description` = '{$params[3]}',
+                    `quantity` = '{$params[4]}',
+                    `image_other` = '{$params[5]}',
+                    `image_main` = '{$params[6]}'
+                WHERE `id` = {$params[7]}
+                ");
+            break;
+
+
+         case "product_delete":
+            return MYSQLIQuery("DELETE FROM
+                `products` WHERE `id` = {$params[0]}
+                ");
+            break;
+
 
 
 
