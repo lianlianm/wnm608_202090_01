@@ -121,7 +121,7 @@ code {
        text-decoration: underline;
    } 
     .nav.crumbs li:not(:first-child)::before {
-        content:'→';
+        content:'>';
         font-family: arial;
     }
 
@@ -148,7 +148,6 @@ code {
 	background-size:cover;
 	background-position:center;
 	background-attachment:fixed;
-
 	height:70vh;
 }
 /*70vh就是70%view height */
@@ -157,8 +156,10 @@ code {
 .card {
 	background-color: var(--color-white);
 	padding:1em;
-	margin-top:1em;
-	margin-bottom: 1em;
+	/*margin-top:1em;*/
+	margin-top:2em;
+	/*margin-bottom: 1em;*/
+	/* margin-bottom: 3em; */
 	position:relative;
 	overflow:hidden;
 }
@@ -190,6 +191,10 @@ code {
     .card-section~.card-section {
         border-top:1px solid var(--color-neutral-light);
     }
+
+    .card-section {
+      padding: 1em;
+   }
 
 
 .well {
@@ -259,13 +264,27 @@ code {
     outline:0;
 }
 
+.form-input-border {
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    background-color: transparent;
+    font: inherit;
+    padding: 0.4em 1em;
+    margin-bottom: 0.8em;
+    border: 1px solid #c3bfbf;
+    outline:0;
+    border-radius: 0.5em;
+}
+
+
 
 .form-control {
     margin: 1em 0;
 }
 .form-label {
     font-size: 0.8em;
-    color: var(--color-neutral-medium);
+    /*color: var(--color-neutral-medium);*/
 }
 
 
@@ -325,6 +344,7 @@ code {
     border-radius: 2em;
     border-width: 0;
     outline: 0;
+    margin: 1em 0;
     /*margin: 1em 0; 添加hotdog之间的距离*/
 }
 
@@ -385,6 +405,11 @@ code {
 }
  /*-webkit-appearance: none; 改变按钮和其他控件的外观，使其类似于原生控件，是为了使select在每个操作系统中都显示一样。此属性非标准且渲染效果在不同浏览器下不同，有些属性值甚至不支持，请慎用。*/
 
+
+
+
+
+
 .form-select {
     position:relative;
     margin: 0.5em 0;
@@ -401,6 +426,7 @@ code {
     pointer-events: none;
     color: var(--color-neutral-medium);
 }
+
 
 
 

@@ -19,7 +19,7 @@ switch($_GET['action']) {
 	    $_SESSION['cart'] = array_filter($_SESSION['cart'],function($o){
 	    	return $o->id!=$_POST['product-id'];
 	    	});
-	    hearder("location:product_cart.php");
+	    header("location:product_cart.php");
 	    break;
 
 	case "reset-cart":

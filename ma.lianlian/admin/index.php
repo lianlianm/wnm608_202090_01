@@ -10,14 +10,15 @@ setDefault('limit','12');
 $products = makeStatement("products_admin_all",[]);
  
 $empty_product = (object)[
-"title"=>"Flowerpot1",
+"title"=>"Horse Head Wall Pen Holder",
 "price"=>"12.99",
-"category"=>"hui",
-"description"=>"Huizhou architectural elements.",
+"category"=>"Hui",
+"description"=>"Based on the typical structural contours and materials of Huizhou architecture, a series of household products including flower pots, lamps, and pen holders are designed. Use simple lines to depict the outline of the building to create a simple and harmonious mood. The off-white tone of the products can be harmoniously matched with different environments and has a good decorative effect.",
+"material"=>"Cement, Iron Wire, Wood",
 "quantity"=>"20",
-"image_other"=>"hui_flowerpot1_1.jpg,hui_flowerpot1_2.jpg,hui_flowerpot1_3.jpg",
+"image_other"=>"hui_penholder_1.jpg,hui_penholder_2.jpg",
 //注意此处多个图片文件名之间有无space，必须跟line78一致， 此处我的是无space
-"image_main"=>"hui_flowerpot1_main.jpg"
+"image_main"=>"hui_penholder_main.jpg"
 ];
 
 
@@ -29,6 +30,7 @@ switch(@$_GET['crud']){
 	    	$_POST['product-price'],
 	    	$_POST['product-category'],
 	    	$_POST['product-description'],
+	    	$_POST['product-material'],
 	    	$_POST['product-quantity'],
 	    	$_POST['product-image_other'],
 	    	$_POST['product-image_main'],
@@ -47,6 +49,7 @@ switch(@$_GET['crud']){
 	    	$_POST['product-price'],
 	    	$_POST['product-category'],
 	    	$_POST['product-description'],
+	    	$_POST['product-material'],
 	    	$_POST['product-quantity'],
 	    	$_POST['product-image_other'],
 	    	$_POST['product-image_main']
@@ -114,6 +117,10 @@ $productdata = $id=='new' ? '' : <<<HTML
 		<span>$product->description</span>
 	</div>
 	<div>
+		<strong>Material</strong>
+		<span>$product->material</span>
+	</div>
+	<div>
 		<strong>Images</strong>
 		<div class="image-thumbs"><img src='img/products/$product->image_main'></div>
 		<div class="image-thumbs">$thumbs_elements</div>
@@ -124,10 +131,10 @@ HTML;
 
 
 echo <<<HTML
-<div class="card soft">
+<div class="card">
 <nav class="nav crumbs">
 	<ul>
-	    <li><a href="{$_SERVER['PHP_SELF']}">Back</a></li>
+	    <li><a href="{$_SERVER['PHP_SELF']}"> < Back</a></li>
 	</ul>
 </nav>
 </div>
@@ -158,6 +165,10 @@ echo <<<HTML
                     <input id="product-description" name="product-description" type="text" placeholder="Type product description" class="form-input" value="$product->description">
                 </div>
                 <div class="form-control">
+                    <label for="product-material" class="form-label">Material</label>
+                    <input id="product-material" name="product-material" type="text" placeholder="Type product material" class="form-input" value="$product->material">
+                </div>
+                <div class="form-control">
                     <label for="product-image_main" class="form-label">Image Main</label>
                     <input id="product-image_main" name="product-image_main" type="text" placeholder="Type product image_main" class="form-input" value="$product->image_main">
                 </div>
@@ -166,7 +177,7 @@ echo <<<HTML
                     <input id="product-image_other" name="product-image_other" type="text" placeholder="Type product image_other" class="form-input" value="$product->image_other">
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-button" value="Save">
+                    <input type="submit" class="btn sell" value="Save">
                 </div>
             </form>
         </div>
@@ -191,7 +202,7 @@ HTML;
 	<header class="navbar">
         <div class="container grid display-flex flex-align-center">
             <div class="col-xs-12 col-md-3" style="margin:auto">
-                <h1 class="heading-bold">Products Admin</h1>
+                <h2>Products Admin</h2>
             </div>
     
             <div class="col-xs-12 col-md-3">
@@ -199,9 +210,9 @@ HTML;
     
             <nav class="nav pills col-xs-12 col-md-6" style="margin:auto">
                 <ul> 
-                    <li><a href="product_list.php" class="heading-bold">Shop</a></li>
-                    <li><a href="<?= $_SERVER['PHP_SELF'] ?>" class="heading-bold">List</a></li>
-                    <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new" class="heading-bold">Add New Product</a></li>
+                    <li><a href="product_list.php">Shop</a></li>
+                    <li><a href="<?= $_SERVER['PHP_SELF'] ?>">List</a></li>
+                    <li><a href="<?= $_SERVER['PHP_SELF'] ?>?id=new">Add New Product</a></li>
                 </ul>
             </nav>
         </div>
@@ -231,8 +242,9 @@ HTML;
 		} else {
 
 		?>
-		<div class="card medium soft">
+		
 		<h2>Product List</h2>
+		<div class="card">
 
 		    <div>
     

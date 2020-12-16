@@ -35,29 +35,42 @@ function selectAmount($amount=1,$total=10) {
 
 function makeCartList($r,$o) {
 $totalfixed = number_format($o->total,2,'.','');
-$selectamount = selectAmount($o->amount,20);
+$selectamount = selectAmount($o->amount,10);
 return $r.<<<HTML
-<div class="display-flex">
-   <div class="flex-none image-thumbs">
-      <img src="img/products/$o->image_main">
+<tr>
+
+<!-- <td>
+    <div class="form-control">
+        <input type="checkbox">
+    </div>
+</td> -->
+<td>
+   <div class="display-flex"> 
+      <img src="img/products/$o->image_main" alt="" style="height:80px">
    </div>
-   <div class="flex-stretch">
+</td>
+<td>
+   <div class="display-flex">
       <strong>$o->title</strong>
-      <form action="product_actions.php?action=delete-cart-item" method="post">
-         <input type="hidden" name="product-id" value="$o->id">
-         <input type="submit" value="Delete" class="form-button inline" style="font-size:0.8em">
-      </form>
    </div>
-   <div class="flex-none">
-      <div>&dollar;$totalfixed</div>
-      <form action="product_actions.php?action=update-cart-item" method="post" onchange="this.submit()">
-         <input type="hidden" name="product-id" value="$o->id">
+</td>
+<td>
+   <form action="product_actions.php?action=update-cart-item" method="post" onchange="this.submit()">
+      <input type="hidden" name="product-id" value="$o->id">
          <div class="form-select" style="font-size:0.8em">
             $selectamount
          </div>
-      </form>
-   </div>
-</div>
+   </form>
+</td>
+<td>&dollar;$totalfixed</td>
+<td>
+   <form action="product_actions.php?action=delete-cart-item" method="post">
+      <input type="hidden" name="product-id" value="$o->id">
+      <input type="submit" value="Delete" class="form-button inline" style="font-size:0.8em">
+   </form>
+</td>
+</tr>
+
 HTML;
 }
 
@@ -92,7 +105,7 @@ return <<<HTML
    <div class="flex-none">&dollar;$taxed;</div>
 </div>
 <div class="card-section">
-  <a href="product_checkout.php" class="form-button">Checkout</a>
+  <a href="product_checkout.php" class="btn sell">Checkout</a>
 </div>
 
 
@@ -104,17 +117,28 @@ HTML;
 
 function makeAdminList($r,$o) {
 return $r.<<<HTML
-<div class="display-flex card flat soft">
-   <div class="flex-none image-thumbs">
-      <img src="img/products/$o->image_main">
+<div class="grid gap card soft" style="margin-bottom: 0;">
+
+   <div class="col-xs-12 col-md-3">
+      <div class="image-thumbs">
+         <img src="img/products/$o->image_main" style="width: 150px;
+    height: 150px;">
+      </div>
    </div>
-   <div class="flex-stretch" style="padding:1em">
-      <div><strong>$o->title</strong></div>
-      <div>$o->category</div>
+
+   <div class="col-xs-12 col-md-6">
+      <div>
+         <div><strong>$o->title</strong></div>
+         <div>$o->category</div>
+         <div>$o->price</div>
+      </div>
    </div>
-   <div class="flex-none">
-      <div class="card-section"><a href="admin/?id=$o->id" class="form-button">Edit</a></div>
-      <div class="card-section"><a href="product_item.php?id=$o->id" class="form-button">View</a></div>
+
+   <div class="col-xs-12 col-md-3">
+      <div class="flex-none">
+         <div class="card-section"><a href="admin/?id=$o->id" class="form-button">Edit</a></div>
+         <div class="card-section"><a href="product_item.php?id=$o->id" class="form-button">View</a></div>
+      </div>
    </div>
 </div>
 HTML;

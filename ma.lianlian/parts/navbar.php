@@ -10,10 +10,10 @@
 
         <nav class="nav pills col-xs-12 col-md-6" style="margin:auto">
             <ul> 
-                <li><a href="index.php" class="heading-bold">Home</a></li>
-                <li><a href="product_list.php" class="heading-bold">Shop</a></li>
-                <li><a href="about.php" class="heading-bold">About</a></li>
-                <li><a href="product_cart.php" class="heading-bold">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="product_list.php">Shop</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="product_cart.php">
                         <span>Cart</span>
                         <span class="badge"><?= makeCartBadge() ?></span>
                     </a>
@@ -25,7 +25,6 @@
 
 <!-- 将原来html中的导航栏code单独放在一个PHP文件中，作为导航栏的源文件 -->
 <!-- 而且这个文件is not a completed file, 他还是完整文件的一部分 -->
-
 
 
 

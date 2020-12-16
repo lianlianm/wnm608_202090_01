@@ -76,8 +76,8 @@ $products = isset($result['error']) ? [] : $result;
   <?php include "parts/navbar.php" ?>
 
   <div class="container">
-      
-    <form action="product_list.php" method="get" class="hotdog stack">
+     
+    <form action="product_list.php" method="get" class="hotdog">
       <input type="search" name="s" placeholder="Search for a Product" value="<?= @$_GET['s'] ?>">
 
       <?
@@ -88,87 +88,95 @@ $products = isset($result['error']) ? [] : $result;
          "t"=>"search"
       ],[]);
       ?>
-      <button type="submit">Search</button>
+      <button type="submit" style="border:none;"><img src="img/icons/search.svg" alt="" class="icon" type="submit"></button>
+
     </form>
 
-    <div class="display-flex" style="margin:1em 0">
-      <div class="flex-none display-flex">
-        <form action="product_list.php" method="get">
-          <?
-          makeHiddenValues($_GET,[
-             "category"=>"hui",
-             "t"=>"products_by_category"
-          ]);
-          ?>
-          <input type="submit" value="Hui" class="form-button">
-        </form>
-        <form action="product_list.php" method="get">
-          <?
-          makeHiddenValues($_GET,[
-             "category"=>"gray", 
-             "t"=>"products_by_category"
-          ]);
-          ?>
-          <input type="submit" value="Gray" class="form-button">
-        </form>
-        <form action="product_list.php" method="get">
-          <?
-          makeHiddenValues($_GET,[
-             "category"=>"angle",
-             "t"=>"products_by_category"
-          ]);
-          ?>
-          <input type="submit" value="Angle" class="form-button">
-        </form>
+    <div class="grid" style="margin:1em 0; align-items: center;">
+      <div class="col-xs-12 col-md-4">
+        <div class="flex-none display-flex">
+          <form action="product_list.php" method="get" style="margin:0 1em;">
+            <?
+            makeHiddenValues($_GET,[
+               "category"=>"hui",
+               "t"=>"products_by_category"
+            ]);
+            ?>
+            <input type="submit" value="Hui" class="btn color-option">
+          </form>
+          <form action="product_list.php" method="get" style="margin:0 1em;">
+            <?
+            makeHiddenValues($_GET,[
+               "category"=>"gray", 
+               "t"=>"products_by_category"
+            ]);
+            ?>
+            <input type="submit" value="Gray" class="btn color-option">
+          </form>
+          <form action="product_list.php" method="get" style="margin:0 1em;">
+            <?
+            makeHiddenValues($_GET,[
+               "category"=>"angle",
+               "t"=>"products_by_category"
+            ]);
+            ?>
+            <input type="submit" value="Angle" class="btn color-option">
+          </form>
+        </div>
       </div>
-      <div class="flex-stretch"></div>
-      <div class="flex-none">
-        <form action="product_list.php" method="get">
-           <?
-           makeHiddenValues($_GET,[]);
-           ?>
-          <div class="form-select">
-            <select onchange="checkSort(this)">
-              <?=makeSortOptions()?>
-            </select>
-          </div>
-        </form>
+      <!-- <div class="flex-stretch"></div> -->
+      <div class="col-xs-12 col-md-4"></div>
+      <div class="col-xs-12 col-md-4">
+        <div class="flex-none">
+          <form action="product_list.php" method="get">
+             <?
+             makeHiddenValues($_GET,[]);
+             ?>
+            <div class="form-select">
+              <select onchange="checkSort(this)">
+                <?=makeSortOptions()?>
+              </select>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
 
-    <h2>Product List</h2>
-
-
-    <div class="grid gap">
-         
-      <?php
-      echo array_reduce(
-      $products,
-      'makeProductList'
-       );
-
-      ?>
-
-         <!-- <?php 
-                // $conn = makeConn();
-                // $result = @$conn->query("SELECT * FROM products");
-                // if($conn->errno) die($conn->error);
-                // while($row = $result->fetch_object()) {
-                //     echo "<li>$row->title</li>";
-                // }
-                // $arr = MYSQLIQuery("SELECT * FROM products");
-                // print_p($arr);
-                // echo array_reduce(
-                //      MYSQLIQuery("SELECT * FROM products"),
-                //      function($r,$o) {
-                //         return $r."<li>
-                //         <a href='product_item.php?id=$o->id'>$o->title - &dollar;$o->price</a>
-                //         </li>";
-                //      }
-                // );
-                 ?> -->
-      </div>
+    <div class="card">
+      <h2>Product List</h2>
+      
+      
+      <div class="grid gap">
+           
+        <?php
+        echo array_reduce(
+        $products,
+        'makeProductList'
+         );
+      
+        ?>
+      
+           <!-- <?php 
+                  // $conn = makeConn();
+                  // $result = @$conn->query("SELECT * FROM products");
+                  // if($conn->errno) die($conn->error);
+                  // while($row = $result->fetch_object()) {
+                  //     echo "<li>$row->title</li>";
+                  // }
+                  // $arr = MYSQLIQuery("SELECT * FROM products");
+                  // print_p($arr);
+                  // echo array_reduce(
+                  //      MYSQLIQuery("SELECT * FROM products"),
+                  //      function($r,$o) {
+                  //         return $r."<li>
+                  //         <a href='product_item.php?id=$o->id'>$o->title - &dollar;$o->price</a>
+                  //         </li>";
+                  //      }
+                  // );
+                   ?> -->
+        </div>
+    </div>
   </div>
 
   <div class="container" style="margin:5em auto">

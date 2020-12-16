@@ -24,11 +24,11 @@ $cart_product = cartItemById($_GET['id']);
 
          <div class="display-flex">
             <div class="flex-none">
-               <a href="product_list.php" class="form-button">Back to shopping</a>
+               <a href="product_list.php" class="btn color-option"> < Back to shopping</a>
             </div>
             <div class="flex-stretch"></div>
             <div class="flex-none">
-               <a href="product_cart.php" class="form-button">Check Cart</a>
+               <a href="product_cart.php" class="btn sell">Check Cart > </a>
             </div>
          </div>
 

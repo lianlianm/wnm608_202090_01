@@ -17,22 +17,99 @@ include_once "parts/templates.php";
     <?php include "parts/navbar.php" ?>
     <!-- 将navbar的code单独放在一个navbar.php文件中，然后引入每个page，则只需修改源navbar.php文件，就可以自动修改每个page的导航栏 -->
 
-    <div class="view-window" style="background-image:url(img/background001.jpg) ">
-        <div class="slogan heading-bold">
-            HUI <br> A CULTURAL AND MINIMALISM HOME 
+    <div class="view-window" style="background-image:url(img/products/background001.jpg);">
+        <div class="slogan">
+           <h2>Explore Hui Culture</h2>
+           <h2>Start Your Minimalism Life Here </h2>
         </div>
     </div>
 
 
-    <div class="container">
+  <!--   <div class="container">
         <div class="card soft">
             <h2>Welcome to the Store</h2>
+        </div>
+    </div>
+ -->
+    <div class="container">
+        <div class="card">
+            <h2 style="text-align:center;">Welcome to our store</h2>
+            <strong>We are design studio focused on household products and traditional culture.
+                Here you can find cultural and creative products.
+                We are glad to communicate Chinese culture with you.</strong>      
+        </div>  
+
+
+
+        <div class="card flat display-flex">
+            <div class="grid gap">
+                <div class="col-xs-12 col-md-8 display-flex flex-align-center">
+                    <div class="flex-stretch">  
+                         <img src="img/products/hui.jpg" alt="" style="width:100%">
+                    </div> 
+                </div>
+
+
+                <div class="col-xs-12 col-md-4 display-flex flex-align-center">
+                    <div>
+                        <h3>HUI</h3>
+                        <p>Simple lines</p>
+                        <p>Harmony with nature</p>
+                        <p>Appreciate the impression of Huizhou</p>
+                        <div class="form-control">
+                            <a href="product_list.php" class="btn sell inline">Shop Now</a>
+                        </div>
+                    </div>  
+                </div>
+            </div>   
+        </div>
+
+        <div class="card flat display-flex">
+            <div class="grid gap">
+                <div class="col-xs-12 col-md-4 display-flex flex-align-center">
+                    <div>
+                        <h3>Gray</h3>
+                        <p>A quiet high mountain stream painting.</p>
+                        <div class="form-control">
+                            <a href="product_list.php" class="btn sell inline">Shop Now</a>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-xs-12 col-md-8 display-flex flex-align-center flex-justify-center">
+                    <div class="flex-stretch">  
+                         <img src="img/products/gray.jpg" alt="" style="width:100%">
+                    </div> 
+                </div>
+            </div>   
+        </div>
+
+        <div class="card flat display-flex">
+            <div class="grid gap">
+                <div class="col-xs-12 col-md-8 display-flex flex-align-center">
+                    <div class="flex-stretch">  
+                         <img src="img/products/angle.jpg" alt="" style="width:100%">
+                    </div> 
+                </div>
+
+                <div class="col-xs-12 col-md-4 display-flex flex-align-center flex-justify-center">
+                    <div>
+                        <h3>Angle</h3>
+                        <p>Huizhou Prints Art</p>
+                        <p>Meeting<p>
+                        <p>Accompaniment</p>
+                        <p>Warmth</p>
+                        <div class="form-control">
+                            <a href="product_list.php" class="btn sell inline">Shop Now</a>
+                        </div>
+                    </div>  
+                </div>
+            </div>   
         </div>
     </div>
 
     
     <div class="container">
-      <h2>New </h2>
+      <h2>New Arrivals</h2>
       <?php recommendNew(); ?>
     </div>
 

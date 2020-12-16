@@ -1,33 +1,22 @@
-
 <footer>
-	<div class="container" style="padding-top: 2em;padding-bottom: 2em;" >
-		<div class="grid gap">
-			<div class="display-flex col-xs-12 col-md-6">
-				<ul> 
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="product_list.php">Shop</a></li>
-                    <li><a href="about.php">About Us</a></li>
-                     <li><a href="about.php">Trade Pricing</a></li>
-                     <li><a href="about.php">International Orders</a></li>
-                     <li><a href="about.php">Returns & Exchanges</a></li>
-                     <li><a href="about.php">Contact Us</a></li>
-                </ul>
-			</div>
-			<div class="display-flex col-xs-12 col-md-6">
-				<div>
-					<h4 style="text-align: left;">Sign up for our new product releases!</h4>
-					<form class="form-control">
-						<input type="email" value="" placeholder="Email Address" name="EMAIL">
-						<input type="submit" class="btn color-option" value="Subscribe" name="subscribe">
-					</form>
+	<div class="container">
+		<div class="grid">
+			<div class="col-xs-12 col-md-4">
+			    <h3 style="margin-bottom: 0.2em;">Address:</h3>79 New Montgomery St.<br>San Francisco, CA 9410.2em5
+			    <h3 style="margin-bottom: 0.2em;">Contact:</h3>415.5688.771
+		    </div>
+		    <div class="col-xs-12 col-md-4"></div>
+			<div class="col-xs-12 col-md-4">
+			    <h3 style="margin-bottom: 0.2em;">Community:</h3>
+				<div class="social">
+					<a href="https://www.facebook.com/" target="_blank"><img class="social-media" src="img/icons/icon1.png" alt=""></a>
+					<a href="https://www.facebook.com/" target="_blank"><img class="social-media" src="img/icons/icon2.png" alt=""></a>
+					<a href="https://www.facebook.com/" target="_blank"><img class="social-media" src="img/icons/icon3.png" alt=""></a>
+					<a href="https://www.facebook.com/" target="_blank"><img class="social-media" src="img/icons/icon4.png" alt=""></a>
 				</div>
-				<div>
-					<h4 style="text-align: left;">Follow Us</h4>
-					<a href="" class="icon"></a>
-				</div>
-			</div>
+				<h3 style="margin-bottom: 0.2em;">Copyright@lianlian 2020</h3>
+			</div>	
 		</div>
-
-        <div>Copyright © Lian. All Rights Reserved</div>
-    </div>
+	</div>
+	
 </footer>
