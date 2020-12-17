@@ -25,7 +25,7 @@ include_once "lib/php/functions.php";
         <div class="card">
             <h3 style="text-align:left;"><strong>Contact:</strong></h3>
             <p>Email: <a href="lianlianm19@gmail.com" target="_blank">lianlianm19@gmail.com</a></p>
-            <p>Tex or Call us: 415.5688.771</p>
+            <p>Text or Call us: 415.5688.771</p>
 
 
 

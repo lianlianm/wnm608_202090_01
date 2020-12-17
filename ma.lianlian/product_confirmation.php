@@ -17,7 +17,8 @@ include_once "parts/templates.php";
 
 	<div class="container" style="margin: 5em auto;">
         <div class="card">
-            <h1 style="text-align:center;color:#2A6AA3;">Thanks for Purchasing!</h1>      
+            <h1 style="text-align:center;color:#2A6AA3;">Thanks for Purchasing!</h1>
+            <p style="text-align:center;">You will receive an email when your order has shipped.</p>      
         </div>  
         
 
@@ -29,10 +30,14 @@ include_once "parts/templates.php";
   
 
 
-        <div class="card">
-                <a href="product_list.php" class="btn sell inline">Continue to shopping</a>
+        <div class="grid gap card">
+            <div class="col-xs-0 col-md-4"></div>
+            <div class="col-xs-12 col-md-4">
+                <a href="product_list.php" class="btn sell">Continue shopping</a>
+            </div>
+            <div class="col-xs-0 col-md-4"></div>
         </div>
-  
+ 
     </div>
     
     

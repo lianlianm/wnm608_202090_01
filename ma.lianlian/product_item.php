@@ -31,7 +31,7 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
 
    <div class="container">
 
-      <div class="card flat">
+      <div class="card">
          <nav class="nav crumbs">
             <ul style="align-items: center;"> 
                <li><a href="index.php">Home</a></li>
@@ -127,12 +127,14 @@ $thumbs_elements = array_reduce($thumbs,function($r,$o){
       </div>
       
    
+      <div class="card">
          <h2 style="margin-top: 3em;">You may also like</h2>
            
          <?php
-
+         
             recommendSimilar($product->category,$product->id);
          ?>
+      </div>
    </div>
 
 

@@ -243,7 +243,9 @@ HTML;
 
 		?>
 		
-		<h2>Product List</h2>
+		<div class="card">
+			<h2>Product List</h2>
+		</div>
 		<div class="card">
 
 		    <div>

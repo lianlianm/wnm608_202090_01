@@ -77,22 +77,24 @@ $products = isset($result['error']) ? [] : $result;
 
   <div class="container">
      
-    <form action="product_list.php" method="get" class="hotdog">
-      <input type="search" name="s" placeholder="Search for a Product" value="<?= @$_GET['s'] ?>">
+    <div class="card">
+      <form action="product_list.php" method="get" class="hotdog">
+        <input type="search" name="s" placeholder="Search for a Product" value="<?= @$_GET['s'] ?>">
+      
+        <?
+        makeHiddenValues([
+           "orderby"=>$_GET['orderby'],
+           "orderby_direction"=>$_GET['orderby_direction'],
+           "limit"=>$_GET['limit'],
+           "t"=>"search"
+        ],[]);
+        ?>
+        <button type="submit" style="border:none;"><img src="img/icons/search.svg" alt="" class="icon" type="submit"></button>
+      
+      </form>
+    </div>
 
-      <?
-      makeHiddenValues([
-         "orderby"=>$_GET['orderby'],
-         "orderby_direction"=>$_GET['orderby_direction'],
-         "limit"=>$_GET['limit'],
-         "t"=>"search"
-      ],[]);
-      ?>
-      <button type="submit" style="border:none;"><img src="img/icons/search.svg" alt="" class="icon" type="submit"></button>
-
-    </form>
-
-    <div class="grid" style="margin:1em 0; align-items: center;">
+    <div class="grid card" style="margin:1em 0; align-items: center;">
       <div class="col-xs-12 col-md-4">
         <div class="flex-none display-flex">
           <form action="product_list.php" method="get" style="margin:0 1em;">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2020 at 08:18 PM
+-- Generation Time: Dec 16, 2020 at 05:31 PM
 -- Server version: 5.6.49-cll-lve
 -- PHP Version: 7.3.6
 
@@ -56,7 +56,8 @@ INSERT INTO `products` (`id`, `title`, `price`, `date_create`, `date_modify`, `c
 (23, 'Narrow Desk Lamp', 12.99, '2020-11-09 01:06:44', '2020-11-09 01:06:44', 'Hui', 'hui_lamp_main.jpg', 'hui_lamp_1.jpg,hui_lamp_2.jpg', 'hui_lamp_main.jpg', 'Based on the typical structural contours and materials of Huizhou architecture, a series of household products including flower pots, lamps, and pen holders are designed. Use simple lines to depict the outline of the building to create a simple and harmonious mood. The off-white tone of the products can be harmoniously matched with different environments and has a good decorative effect.\r\n', 'Cement, Iron Wire, Wood', 20),
 (24, 'Circular Wall Lamp', 15.99, '2020-11-09 01:10:44', '2020-11-09 01:10:44', 'Gray', 'gray_circular_main.jpg', 'gray_circular_1.jpg,gray_circular_2.jpg', 'gray_circular_main.jpg', 'The circular wall lamp is inspired by the painting of Peach Blossom Spring, and uses a circular iron frame to create the effect of a painting. When not in use, it is a landscape painting on the wall. When used, the light undergoes refraction to create a sparkling effect.', 'Cement, Iron, Optical Fiber, Resin', 15),
 (25, 'Cloud Lamp', 15.99, '2020-11-09 01:04:44', '2020-11-09 01:04:44', 'Gray', 'gray_cloud_main.jpg', 'gray_cloud_1.jpg,gray_cloud_2.jpg', 'gray_cloud_main.jpg', 'The cirrus cloud shape of the lantern comes from Tengyun in the painting, which expresses the meaning of peace and good fortune, and is very elegant and beautiful.\r\n', 'Cement, Iron, Optical Fiber, Resin\r\n', 15),
-(26, 'Desktop Night Light', 15.99, '2020-11-09 01:15:44', '2020-11-09 01:15:44', 'Gray', 'gray_desktop_main.jpg', 'gray_desktop_1.jpg,gray_desktop_2.jpg', 'gray_desktop_main.jpg', 'The flaky shape of the lamp represents the stacked mountains, and the horizontal and vertical arrangement creates a sense of space. Light is emitted from the inside of the lamp body, and the weakened light meets the needs of users for night actions.\r\n', 'Cement, Iron, Optical Fiber, Resin', 15),
+(26, 'Desktop Night Light', 15.99, '2020-11-09 01:15:44', '2020-11-09 01:15:44', 'Gray', 'gray_desktop_main.jpg', 'gray_desktop_1.jpg,gray_desktop_2.jpg', 'gray_desktop_main.jpg', 'Cement, Iron, Optical Fiber, Resin', 'Cement, Iron, Optical Fiber, Resin', 15),
+(39, 'Horse Head Wall Pen Holder', 12.99, '2020-12-16 16:52:58', '2020-12-16 16:52:58', 'Hui', 'hui_penholder_main.jpg', 'hui_penholder_1.jpg,hui_penholder_2.jpg', '', 'Based on the typical structural contours and materials of Huizhou architecture, a series of household products including flower pots, lamps, and pen holders are designed. Use simple lines to depict the outline of the building to create a simple and harmonious mood. The off-white tone of the products can be harmoniously matched with different environments and has a good decorative effect.', 'Cement, Iron Wire, Wood', 20),
 (27, 'Peak Lamp', 15.99, '2020-11-09 01:01:44', '2020-11-09 01:01:44', 'Gray', 'gray_peaklamp_main.jpg', 'gray_peaklamp_1.jpg,gray_peaklamp_2.jpg', 'gray_peaklamp_main.jpg', 'The hand lamp is inspired by the melting of snow in the snow-capped mountains. When the snow melts, it flows down the mountain and merges into the stream. The shape of the top of the mountain, combined with the lamp body, fits the space structure of the scene.\r\n', 'Cement, Iron, Optical Fiber, Resin\r\n', 15),
 (28, 'Fan-shaped Wall Lamp', 15.99, '2020-11-09 01:13:44', '2020-11-09 01:13:44', 'Gray', 'gray_fan_main.jpg', 'gray_fan_1.jpg,gray_fan_2.jpg', 'gray_fan_main.jpg', 'The design of the wall lamp is derived from the cascading mountains and the flowing water in the painting. In terms of materials, optical fibers are added to the cement, so that the opaque cement can reflect a little bit of starlight.\r\n', 'Cement, Iron, Optical Fiber, Resin\r\n', 15),
 (30, 'Freedom Clock', 8.99, '2020-11-09 01:02:44', '2020-11-09 01:02:44', 'Angle', 'angle_freedom_main.jpg', 'angle_freedom_1.jpg,angle_freedom_2.jpg', 'angle_freedom_main.jpg', 'This part is in a reversible form, that is, the side angle can be freely changed, and the front side has a concave-convex design, which echoes the uneven engraving characteristics of the print.\r\nThe back of the board is recessed inward, and support is added to the lower part, which can be used to stick post-it notes and hold pens. This detail makes the product have the function of reminding things and give people a warm feeling.\r\n', 'Wood, Metal, Plexiglass\r\n', 8),
@@ -81,7 +82,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

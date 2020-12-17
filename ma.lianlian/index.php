@@ -43,14 +43,14 @@ include_once "parts/templates.php";
 
         <div class="card flat display-flex">
             <div class="grid gap">
-                <div class="col-xs-12 col-md-8 display-flex flex-align-center">
+                <div class="col-xs-12 col-md-8 card display-flex flex-align-center">
                     <div class="flex-stretch">  
                          <img src="img/products/hui.jpg" alt="" style="width:100%">
                     </div> 
                 </div>
 
 
-                <div class="col-xs-12 col-md-4 display-flex flex-align-center">
+                <div class="col-xs-12 col-md-4 card display-flex flex-align-center">
                     <div>
                         <h3>HUI</h3>
                         <p>Simple lines</p>
@@ -66,7 +66,7 @@ include_once "parts/templates.php";
 
         <div class="card flat display-flex">
             <div class="grid gap">
-                <div class="col-xs-12 col-md-4 display-flex flex-align-center">
+                <div class="col-xs-12 col-md-4 card display-flex flex-align-center">
                     <div>
                         <h3>Gray</h3>
                         <p>A quiet high mountain stream painting.</p>
@@ -75,7 +75,7 @@ include_once "parts/templates.php";
                         </div>
                     </div>  
                 </div>
-                <div class="col-xs-12 col-md-8 display-flex flex-align-center flex-justify-center">
+                <div class="col-xs-12 col-md-8 card display-flex flex-align-center">
                     <div class="flex-stretch">  
                          <img src="img/products/gray.jpg" alt="" style="width:100%">
                     </div> 
@@ -85,13 +85,13 @@ include_once "parts/templates.php";
 
         <div class="card flat display-flex">
             <div class="grid gap">
-                <div class="col-xs-12 col-md-8 display-flex flex-align-center">
+                <div class="col-xs-12 col-md-8 card display-flex flex-align-center">
                     <div class="flex-stretch">  
                          <img src="img/products/angle.jpg" alt="" style="width:100%">
                     </div> 
                 </div>
 
-                <div class="col-xs-12 col-md-4 display-flex flex-align-center flex-justify-center">
+                <div class="col-xs-12 col-md-4 card display-flex flex-align-center">
                     <div>
                         <h3>Angle</h3>
                         <p>Huizhou Prints Art</p>
@@ -108,7 +108,7 @@ include_once "parts/templates.php";
     </div>
 
     
-    <div class="container">
+    <div class="container card">
       <h2>New Arrivals</h2>
       <?php recommendNew(); ?>
     </div>

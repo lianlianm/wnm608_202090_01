@@ -89,7 +89,7 @@ h6 {
 	top: 70%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	/* background-color: #fbfbfb61;*/
+	background-color: #fbfbfb61;
 	padding: 1em;
 	border-radius: 0.5em;
 	color: var(--color-purchase);
@@ -99,7 +99,7 @@ h6 {
 	transition: all 0.3s;
 }
 .slogan:hover {
-	/*box-shadow: 1px 1px 12px rgba(0,0,0,0.4);*/
+	box-shadow: 1px 1px 12px rgba(0,0,0,0.4);
 	color: var(--color-main-medium);
 }
 
@@ -389,6 +389,12 @@ footer {
 }
 
 @media (max-width:600px) {
+	body {
+	font-size:0.8em;
+}
+}
+
+@media (max-width:600px) {
 	.view-window {
 	position: relative;
     overflow: hidden;
@@ -399,4 +405,13 @@ footer {
 	}
 
 }
+
+@media (max-width:600px) {
+	.logo {
+	max-width: 80px;
+}
+
+}
+
+
     
